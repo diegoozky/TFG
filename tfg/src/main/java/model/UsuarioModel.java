@@ -9,13 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/* la etiqueta crea la tabla en la bd*/
+// la etiqueta crea la tabla en la bd
 
 @Entity 
 @Table(name="Usuario")
 public class UsuarioModel {
 	
-	/* atributos*/
+	//atributos
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

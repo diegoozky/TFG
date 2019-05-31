@@ -8,13 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/* La etiqueta 'Entity' crea la tabla en la bd*/
+//La etiqueta 'Entity' crea la tabla en la bd
 
 @Entity
 @Table(name = "Rol")
 public class RolModel {
 
-	/* atributos */
+	//atributos 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
