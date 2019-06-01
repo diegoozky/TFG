@@ -2,6 +2,7 @@ package com.example.tfg.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -33,7 +34,7 @@ public class ActorModel {
 	
 	@ManyToMany
 	@JoinColumn(name="Pelicula")
-	private Set<PeliculaModel> listaPeliculas;
+	private Set<PeliculaModel> listaPeliculas = new HashSet<PeliculaModel>();
 	
 	
 	//getters y setters

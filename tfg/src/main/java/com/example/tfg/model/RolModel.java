@@ -1,6 +1,7 @@
 package com.example.tfg.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -27,7 +28,7 @@ public class RolModel {
 
 	@ManyToMany
 	@JoinColumn(name="Usuario")
-	private Set<UsuarioModel> listaUsarios;
+	private Set<UsuarioModel> listaUsarios = new HashSet<UsuarioModel>();
 
 	/* getter y setters */
 
