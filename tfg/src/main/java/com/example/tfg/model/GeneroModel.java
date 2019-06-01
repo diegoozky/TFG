@@ -1,6 +1,7 @@
 package com.example.tfg.model;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,15 +27,15 @@ public class GeneroModel {
 	
 	@ManyToMany
 	@JoinColumn(name="Pelicula")
-	private ArrayList<PeliculaModel> peliculas;
+	private Set<PeliculaModel> peliculas;
 
 	//Getters and Setters
 
-	public ArrayList<PeliculaModel> getPeliculas() {
+	public Set<PeliculaModel> getPeliculas() {
 		return peliculas;
 	}
 
-	public void setPeliculas(ArrayList<PeliculaModel> peliculas) {
+	public void setPeliculas(Set<PeliculaModel> peliculas) {
 		this.peliculas = peliculas;
 	}
 

@@ -2,6 +2,7 @@ package com.example.tfg.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class ActorModel {
 	
 	@ManyToMany
 	@JoinColumn(name="Pelicula")
-	private ArrayList<PeliculaModel> listaPeliculas;
+	private Set<PeliculaModel> listaPeliculas;
 	
 	
 	//getters y setters
@@ -77,14 +78,15 @@ public class ActorModel {
 		this.fechaDefunción = fechaDefunción;
 	}
 
-	public ArrayList<PeliculaModel> getListaPeliculas() {
+	public Set<PeliculaModel> getListaPeliculas() {
 		return listaPeliculas;
 	}
 
-	public void setListaPeliculas(ArrayList<PeliculaModel> listaPeliculas) {
+	public void setListaPeliculas(Set<PeliculaModel> listaPeliculas) {
 		this.listaPeliculas = listaPeliculas;
 	}
-	
+
+
 	
 	
 }

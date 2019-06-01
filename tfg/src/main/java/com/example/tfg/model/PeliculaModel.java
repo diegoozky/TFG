@@ -1,6 +1,7 @@
 package com.example.tfg.model;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,11 +39,11 @@ public class PeliculaModel {
 	
 	@ManyToMany
 	@JoinColumn(name="Genero")
-	private ArrayList<GeneroModel> listaGeneros;
+	private Set<GeneroModel> listaGeneros;
 	
 	@ManyToMany
 	@JoinColumn(name="Actor")
-	private ArrayList<ActorModel> listaActores;
+	private Set<ActorModel> listaActores;
 	
 	@ManyToOne
 	@JoinColumn(name="Director")
@@ -115,21 +116,6 @@ public class PeliculaModel {
 		this.ruta_img = ruta_img;
 	}
 
-	public ArrayList<GeneroModel> getListaGeneros() {
-		return listaGeneros;
-	}
-
-	public void setListaGeneros(ArrayList<GeneroModel> listaGeneros) {
-		this.listaGeneros = listaGeneros;
-	}
-
-	public ArrayList<ActorModel> getListaActores() {
-		return listaActores;
-	}
-
-	public void setListaActores(ArrayList<ActorModel> listaActores) {
-		this.listaActores = listaActores;
-	}
 
 	public DirectorModel getDirector() {
 		return director;
@@ -137,6 +123,22 @@ public class PeliculaModel {
 
 	public void setDirector(DirectorModel director) {
 		this.director = director;
+	}
+
+	public Set<GeneroModel> getListaGeneros() {
+		return listaGeneros;
+	}
+
+	public void setListaGeneros(Set<GeneroModel> listaGeneros) {
+		this.listaGeneros = listaGeneros;
+	}
+
+	public Set<ActorModel> getListaActores() {
+		return listaActores;
+	}
+
+	public void setListaActores(Set<ActorModel> listaActores) {
+		this.listaActores = listaActores;
 	}
 
 }

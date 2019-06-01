@@ -1,6 +1,7 @@
 package com.example.tfg.model;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,16 +34,16 @@ public class UsuarioModel {
 	
 	@ManyToMany
 	@JoinColumn(name="Rol")
-	private ArrayList<RolModel> listaRoles;
+	private Set<RolModel> listaRoles;
 	
 	
 	/*getters y setters*/
 	
-	public ArrayList<RolModel> getListaRoles() {
+	public Set<RolModel> getListaRoles() {
 		return listaRoles;
 	}
 
-	public void setListaRoles(ArrayList<RolModel> listaRoles) {
+	public void setListaRoles(Set<RolModel> listaRoles) {
 		this.listaRoles = listaRoles;
 	}
 
