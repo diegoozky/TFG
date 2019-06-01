@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.tfg.model.UsuarioModel;
 
-public interface PeliculaRepositorio extends CrudRepository<UsuarioModel, Integer>{
+public interface UsuarioRepository extends CrudRepository<UsuarioModel, Integer>{
 
 }
