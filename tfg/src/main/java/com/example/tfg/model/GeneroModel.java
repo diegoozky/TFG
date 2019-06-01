@@ -1,4 +1,4 @@
-package model;
+package com.example.tfg.model;
 
 import java.util.ArrayList;
 
@@ -25,6 +25,14 @@ public class GeneroModel {
 	private ArrayList<PeliculaModel> peliculas;
 
 	//Getters and Setters
+
+	public ArrayList<PeliculaModel> getPeliculas() {
+		return peliculas;
+	}
+
+	public void setPeliculas(ArrayList<PeliculaModel> peliculas) {
+		this.peliculas = peliculas;
+	}
 
 	public Integer getId() {
 		return id;

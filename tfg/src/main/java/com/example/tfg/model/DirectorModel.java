@@ -1,4 +1,4 @@
-package model;
+package com.example.tfg.model;
 
 import java.sql.Date;
 
@@ -7,23 +7,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 //La etiqueta Entity hace que cree la entidad en nuestra base de datos
 //y la etiqueta table le asigna el nombre de la entidad
 @Entity
-@Table(name = "Actor")
-public class ActorModel {
+@Table(name = "Director")
+public class DirectorModel {
+
+	// Atributos
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String nombre;
-	
+
 	private String lugarNacimiento;
-	
+
 	private Date fechaNacimiento;
-	
+
 	private Date fechaDefunción;
+
+	// Getters and Setters
 
 	public Integer getId() {
 		return id;
@@ -64,6 +69,5 @@ public class ActorModel {
 	public void setFechaDefunción(Date fechaDefunción) {
 		this.fechaDefunción = fechaDefunción;
 	}
-	
-	
+
 }

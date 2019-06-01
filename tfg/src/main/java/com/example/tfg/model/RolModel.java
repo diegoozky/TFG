@@ -1,4 +1,4 @@
-package model;
+package com.example.tfg.model;
 
 import java.util.ArrayList;
 

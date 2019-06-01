@@ -1,4 +1,4 @@
-package model;
+package com.example.tfg.model;
 
 import java.util.ArrayList;
 
@@ -34,6 +34,14 @@ public class UsuarioModel {
 	
 	/*getters y setters*/
 	
+	public ArrayList<RolModel> getListaRoles() {
+		return listaRoles;
+	}
+
+	public void setListaRoles(ArrayList<RolModel> listaRoles) {
+		this.listaRoles = listaRoles;
+	}
+
 	public Integer getId() {
 		return id;
 	}
