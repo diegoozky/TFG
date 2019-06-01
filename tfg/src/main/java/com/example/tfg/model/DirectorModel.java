@@ -1,11 +1,14 @@
 package com.example.tfg.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 //La etiqueta Entity hace que cree la entidad en nuestra base de datos
@@ -27,6 +30,10 @@ public class DirectorModel {
 	private Date fechaNacimiento;
 
 	private Date fechaDefunción;
+	
+	@OneToMany
+	@JoinColumn(name="Pelicula")
+	private ArrayList<PeliculaModel> listaPeliculas;
 
 	// Getters and Setters
 
@@ -69,5 +76,15 @@ public class DirectorModel {
 	public void setFechaDefunción(Date fechaDefunción) {
 		this.fechaDefunción = fechaDefunción;
 	}
+
+	public ArrayList<PeliculaModel> getListaPeliculas() {
+		return listaPeliculas;
+	}
+
+	public void setListaPeliculas(ArrayList<PeliculaModel> listaPeliculas) {
+		this.listaPeliculas = listaPeliculas;
+	}
+	
+	
 
 }

@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 //La etiqueta 'Entity' crea la tabla en la bd
@@ -21,8 +23,10 @@ public class RolModel {
 	private Integer id;
 
 	private String rol;
-/*
-	private ArrayList<UsuarioModel> listaUsarios;*/
+
+	@ManyToMany
+	@JoinColumn(name="Usuario")
+	private ArrayList<UsuarioModel> listaUsarios;
 
 	/* getter y setters */
 
@@ -42,12 +46,12 @@ public class RolModel {
 		this.rol = rol;
 	}
 
-	/*public ArrayList<UsuarioModel> getListaUsarios() {
+	public ArrayList<UsuarioModel> getListaUsarios() {
 		return listaUsarios;
 	}
 
 	public void setListaUsarios(ArrayList<UsuarioModel> listaUsarios) {
 		this.listaUsarios = listaUsarios;
-	}*/
+	}
 
 }

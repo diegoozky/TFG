@@ -1,18 +1,23 @@
 package com.example.tfg.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 //La etiqueta Entity hace que cree la entidad en nuestra base de datos
 //y la etiqueta table le asigna el nombre de la entidad
 @Entity
 @Table(name = "Actor")
 public class ActorModel {
-
+	
+	//atributos
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -24,7 +29,14 @@ public class ActorModel {
 	private Date fechaNacimiento;
 	
 	private Date fechaDefunción;
-
+	
+	@ManyToMany
+	@JoinColumn(name="Pelicula")
+	private ArrayList<PeliculaModel> listaPeliculas;
+	
+	
+	//getters y setters
+	
 	public Integer getId() {
 		return id;
 	}
@@ -64,6 +76,15 @@ public class ActorModel {
 	public void setFechaDefunción(Date fechaDefunción) {
 		this.fechaDefunción = fechaDefunción;
 	}
+
+	public ArrayList<PeliculaModel> getListaPeliculas() {
+		return listaPeliculas;
+	}
+
+	public void setListaPeliculas(ArrayList<PeliculaModel> listaPeliculas) {
+		this.listaPeliculas = listaPeliculas;
+	}
+	
 	
 	
 }

@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 //La etiqueta Entity hace que cree la entidad en nuestra base de datos
@@ -21,18 +23,20 @@ public class GeneroModel {
 	private Integer id;
 	
 	private String genero;
-	/*
-	private ArrayList<PeliculaModel> peliculas;*/
+	
+	@ManyToMany
+	@JoinColumn(name="Pelicula")
+	private ArrayList<PeliculaModel> peliculas;
 
 	//Getters and Setters
-/*
+
 	public ArrayList<PeliculaModel> getPeliculas() {
 		return peliculas;
 	}
 
 	public void setPeliculas(ArrayList<PeliculaModel> peliculas) {
 		this.peliculas = peliculas;
-	}*/
+	}
 
 	public Integer getId() {
 		return id;

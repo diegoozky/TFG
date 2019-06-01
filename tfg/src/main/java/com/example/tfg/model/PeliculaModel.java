@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /* La etiqueta 'Entity' crea la tabla en la bd*/
@@ -33,11 +36,17 @@ public class PeliculaModel {
 	
 	private String ruta_img;
 	
-	/*private ArrayList<GeneroModel> listaGeneros;
+	@ManyToMany
+	@JoinColumn(name="Genero")
+	private ArrayList<GeneroModel> listaGeneros;
 	
+	@ManyToMany
+	@JoinColumn(name="Actor")
 	private ArrayList<ActorModel> listaActores;
 	
-	private DirectorModel director;*/
+	@ManyToOne
+	@JoinColumn(name="Director")
+	private DirectorModel director;
 
 	
 	//getters y setters
@@ -106,7 +115,7 @@ public class PeliculaModel {
 		this.ruta_img = ruta_img;
 	}
 
-	/*public ArrayList<GeneroModel> getListaGeneros() {
+	public ArrayList<GeneroModel> getListaGeneros() {
 		return listaGeneros;
 	}
 
@@ -128,6 +137,6 @@ public class PeliculaModel {
 
 	public void setDirector(DirectorModel director) {
 		this.director = director;
-	}*/
+	}
 
 }

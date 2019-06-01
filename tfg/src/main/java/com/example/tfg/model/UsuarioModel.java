@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 // la etiqueta crea la tabla en la bd
@@ -28,19 +30,21 @@ public class UsuarioModel {
 	private String username;
 	
 	private String password;
-/*
-	private ArrayList<RolModel> listaRoles;*/
+	
+	@ManyToMany
+	@JoinColumn(name="Rol")
+	private ArrayList<RolModel> listaRoles;
 	
 	
 	/*getters y setters*/
 	
-	/*public ArrayList<RolModel> getListaRoles() {
+	public ArrayList<RolModel> getListaRoles() {
 		return listaRoles;
 	}
 
 	public void setListaRoles(ArrayList<RolModel> listaRoles) {
 		this.listaRoles = listaRoles;
-	}*/
+	}
 
 	public Integer getId() {
 		return id;
