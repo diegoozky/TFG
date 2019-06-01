@@ -33,11 +33,11 @@ public class PeliculaModel {
 	
 	private String ruta_img;
 	
-	private ArrayList<GeneroModel> listaGeneros;
+	/*private ArrayList<GeneroModel> listaGeneros;
 	
 	private ArrayList<ActorModel> listaActores;
 	
-	private DirectorModel director;
+	private DirectorModel director;*/
 
 	
 	//getters y setters
@@ -106,7 +106,7 @@ public class PeliculaModel {
 		this.ruta_img = ruta_img;
 	}
 
-	public ArrayList<GeneroModel> getListaGeneros() {
+	/*public ArrayList<GeneroModel> getListaGeneros() {
 		return listaGeneros;
 	}
 
@@ -128,6 +128,6 @@ public class PeliculaModel {
 
 	public void setDirector(DirectorModel director) {
 		this.director = director;
-	}
+	}*/
 
 }

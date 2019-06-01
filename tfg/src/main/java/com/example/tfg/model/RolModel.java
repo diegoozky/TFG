@@ -21,8 +21,8 @@ public class RolModel {
 	private Integer id;
 
 	private String rol;
-
-	private ArrayList<UsuarioModel> listaUsarios;
+/*
+	private ArrayList<UsuarioModel> listaUsarios;*/
 
 	/* getter y setters */
 
@@ -42,12 +42,12 @@ public class RolModel {
 		this.rol = rol;
 	}
 
-	public ArrayList<UsuarioModel> getListaUsarios() {
+	/*public ArrayList<UsuarioModel> getListaUsarios() {
 		return listaUsarios;
 	}
 
 	public void setListaUsarios(ArrayList<UsuarioModel> listaUsarios) {
 		this.listaUsarios = listaUsarios;
-	}
+	}*/
 
 }

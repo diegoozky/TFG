@@ -28,19 +28,19 @@ public class UsuarioModel {
 	private String username;
 	
 	private String password;
-
-	private ArrayList<RolModel> listaRoles;
+/*
+	private ArrayList<RolModel> listaRoles;*/
 	
 	
 	/*getters y setters*/
 	
-	public ArrayList<RolModel> getListaRoles() {
+	/*public ArrayList<RolModel> getListaRoles() {
 		return listaRoles;
 	}
 
 	public void setListaRoles(ArrayList<RolModel> listaRoles) {
 		this.listaRoles = listaRoles;
-	}
+	}*/
 
 	public Integer getId() {
 		return id;

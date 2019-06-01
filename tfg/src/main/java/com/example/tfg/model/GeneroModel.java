@@ -21,18 +21,18 @@ public class GeneroModel {
 	private Integer id;
 	
 	private String genero;
-	
-	private ArrayList<PeliculaModel> peliculas;
+	/*
+	private ArrayList<PeliculaModel> peliculas;*/
 
 	//Getters and Setters
-
+/*
 	public ArrayList<PeliculaModel> getPeliculas() {
 		return peliculas;
 	}
 
 	public void setPeliculas(ArrayList<PeliculaModel> peliculas) {
 		this.peliculas = peliculas;
-	}
+	}*/
 
 	public Integer getId() {
 		return id;
