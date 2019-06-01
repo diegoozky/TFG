@@ -1,6 +1,7 @@
 package com.example.tfg.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -27,7 +28,7 @@ public class GeneroModel {
 	
 	@ManyToMany
 	@JoinColumn(name="Pelicula")
-	private Set<PeliculaModel> peliculas;
+	private Set<PeliculaModel> peliculas = new HashSet<PeliculaModel>();
 
 	//Getters and Setters
 

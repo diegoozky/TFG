@@ -1,6 +1,7 @@
 package com.example.tfg.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -39,11 +40,11 @@ public class PeliculaModel {
 	
 	@ManyToMany
 	@JoinColumn(name="Genero")
-	private Set<GeneroModel> listaGeneros;
+	private Set<GeneroModel> listaGeneros = new HashSet<GeneroModel>();
 	
 	@ManyToMany
 	@JoinColumn(name="Actor")
-	private Set<ActorModel> listaActores;
+	private Set<ActorModel> listaActores = new HashSet<ActorModel>();
 	
 	@ManyToOne
 	@JoinColumn(name="Director")
