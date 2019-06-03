@@ -2,8 +2,10 @@ package com.example.tfg.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,7 +18,7 @@ import com.example.tfg.repositorios.PeliculaRepository;
 //Con la etiqueta RequestMapping indicamos el path que va a tener
 @RestController
 @RequestMapping(path="/pelicula")
-public class ControllerPelicula {
+public class PeliculaController {
 	
 	//A continuacion abrimos el repositorio gracias a la etiqueta Autowired
 	@Autowired
@@ -29,11 +31,34 @@ public class ControllerPelicula {
 		return peliculaRepositorio.findAll();
 	}
 	
+	//Insertar un dato en la bd y devuelve true o false dependiendo si se ha podido realizar la accion
 	@PostMapping
 	@CrossOrigin
 	public @ResponseBody boolean addPelis(@RequestBody PeliculaModel p){
 		if(peliculaRepositorio.findByTitulo(p.getTitulo())==null) {
 			peliculaRepositorio.save(p);
+			return true;
+		}
+		return false;
+	}
+	
+	//Actualiza la bd y devuelve true o false si es posible la accion 
+	@PutMapping
+	@CrossOrigin
+	public @ResponseBody boolean updatePelis(@RequestBody PeliculaModel p){
+		if(peliculaRepositorio.findByTitulo(p.getTitulo())!=null){
+			peliculaRepositorio.save(p);
+			return true;
+		}
+		return false;
+	}
+	
+	//Borra un dato de la bd y devuelve un true o un false si es posible la acción
+	@DeleteMapping
+	@CrossOrigin
+	public @ResponseBody boolean borrarPelis(@RequestBody PeliculaModel p) {
+		if(peliculaRepositorio.findByTitulo(p.getTitulo())!=null){
+			peliculaRepositorio.delete(p);
 			return true;
 		}
 		return false;
