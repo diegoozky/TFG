@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.example.tfg.model.UsuarioModel;
 
 public interface UsuarioRepository extends CrudRepository<UsuarioModel, Integer>{
-	public UsuarioModel findByNombre(String nombre);
+	public UsuarioModel findByUsername(String username);
 }
