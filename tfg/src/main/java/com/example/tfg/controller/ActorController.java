@@ -18,7 +18,7 @@ import com.example.tfg.repositorios.ActorRepository;
 //Añadimos la etiqueta RestController para indicar que es un controlador de un servicio restful
 //Con la etiqueta RequestMapping indicamos el path que va a tener
 @RestController
-@RequestMapping(path="/actor")
+@RequestMapping(path="/actor") 
 public class ActorController {
 	
 	//A continuacion abrimos el repositorio gracias a la etiqueta Autowired
