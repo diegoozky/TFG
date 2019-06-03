@@ -1,6 +1,8 @@
 package com.example.tfg.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +13,12 @@ import com.example.tfg.repositorios.UsuarioRepository;
 @RestController
 @RequestMapping(path="/user")
 public class UserController {
+	
 	//A continuacion abrimos el repositorio gracias a la etiqueta Autowired
-		@Autowired
-		UsuarioRepository usuarioRepositorio;
+	@Autowired
+	UsuarioRepository usuarioRepositorio;
+	
+	//Metodo que devuelve todos las usuarios de nuestra BD
+	@GetMapping
+	@CrossOrigin
 }
