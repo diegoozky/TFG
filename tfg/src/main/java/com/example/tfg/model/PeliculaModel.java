@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,15 +39,15 @@ public class PeliculaModel {
 	
 	private String ruta_img;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="Genero")
 	private Set<GeneroModel> listaGeneros = new HashSet<GeneroModel>();
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="Actor")
 	private Set<ActorModel> listaActores = new HashSet<ActorModel>();
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="Director")
 	private DirectorModel director;
 
