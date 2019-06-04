@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.tfg.model.ActorModel;
 import com.example.tfg.model.DirectorModel;
 import com.example.tfg.model.GeneroModel;
 import com.example.tfg.model.PeliculaModel;
@@ -60,7 +61,12 @@ public class PeliculaController {
 			}
 			p.setListaGeneros(listaGen);
 			
-			//Hace lo mismo con la
+			//Hacemos lo mismo con la colección de actores
+			Set<ActorModel> listaAct = new HashSet<ActorModel>();
+			for(ActorModel a : p.getListaActores()) {
+				listaAct.add(a);
+			}
+			p.setListaActores(listaAct);
 			
 			peliculaRepositorio.save(p);
 			return true;

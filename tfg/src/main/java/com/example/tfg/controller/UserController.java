@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.tfg.model.RolModel;
 import com.example.tfg.model.UsuarioModel;
+import com.example.tfg.repositorios.RolRepository;
 import com.example.tfg.repositorios.UsuarioRepository;
 
 //Añadimos la etiqueta RestController para indicar que es un controlador de un servicio restful
@@ -23,6 +25,9 @@ public class UserController {
 	//A continuacion abrimos el repositorio gracias a la etiqueta Autowired
 	@Autowired
 	UsuarioRepository usuarioRepositorio;
+	
+	@Autowired
+	RolRepository rolRepositorio;
 	
 	//Metodo que devuelve todos las usuarios de nuestra BD
 	@GetMapping
@@ -51,6 +56,8 @@ public class UserController {
 	@CrossOrigin
 	public @ResponseBody boolean addUsuario(@RequestBody UsuarioModel u) {
 		if(usuarioRepositorio.findByUsername(u.getUsername())==null) {
+			RolModel r = rolRepositorio.findByRol(u.getRolModel().getRol());
+			u.setRolModel(r);
 			usuarioRepositorio.save(u);
 			return true;
 		}

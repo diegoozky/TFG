@@ -24,7 +24,7 @@ public class RolModel {
 
 	private String rol;
 
-	@OneToMany(mappedBy="rolModel")
+	@OneToMany(mappedBy="rolModel",cascade = CascadeType.ALL)
 	private Set<UsuarioModel> usuariosRoles = new HashSet<UsuarioModel>();
 	/* getter y setters */
 

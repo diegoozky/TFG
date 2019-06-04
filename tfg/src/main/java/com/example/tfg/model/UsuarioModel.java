@@ -34,7 +34,7 @@ public class UsuarioModel {
 	
 	private String password;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="rolModel_id",referencedColumnName = "id", updatable = false)
 	private RolModel rolModel;
 	
