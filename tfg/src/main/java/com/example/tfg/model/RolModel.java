@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 //La etiqueta 'Entity' crea la tabla en la bd
 
@@ -23,9 +24,8 @@ public class RolModel {
 
 	private String rol;
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<UsuarioModel> listaUsarios = new HashSet<UsuarioModel>();
-
+	@OneToMany(mappedBy="rolModel")
+	private Set<UsuarioModel> usuariosRoles = new HashSet<UsuarioModel>();
 	/* getter y setters */
 
 	public Integer getId() {
@@ -44,12 +44,6 @@ public class RolModel {
 		this.rol = rol;
 	}
 
-	public Set<UsuarioModel> getListaUsarios() {
-		return listaUsarios;
-	}
 
-	public void setListaUsarios(Set<UsuarioModel> listaUsarios) {
-		this.listaUsarios = listaUsarios;
-	}
 
 }

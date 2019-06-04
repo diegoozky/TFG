@@ -40,14 +40,14 @@ public class UserController {
 			UsuarioModel uOk= usuarioRepositorio.findByUsername(u.getUsername());
 			uVerificado.setUsername(uOk.getUsername());
 			uVerificado.setCorreo(uOk.getCorreo());
-			uVerificado.setListaRoles(uOk.getListaRoles());
+			uVerificado.setRolModel(uOk.getRolModel());
 			return uVerificado;
 		}
 		return null;
 	}
 	
 	//Metodo que inserta un usuario en la bd y devuelve true o false dependiendo si se ha podido realizar la accion
-	@PostMapping(path = "/update")
+	@PostMapping(path = "/create")
 	@CrossOrigin
 	public @ResponseBody boolean addUsuario(@RequestBody UsuarioModel u) {
 		if(usuarioRepositorio.findByUsername(u.getUsername())==null) {

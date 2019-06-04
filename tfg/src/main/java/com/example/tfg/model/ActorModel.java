@@ -29,8 +29,7 @@ public class ActorModel {
 	
 	private Date fechaDefunción;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<PeliculaModel> listaPeliculas = new HashSet<PeliculaModel>();
+
 	
 	
 	//getters y setters
@@ -74,16 +73,6 @@ public class ActorModel {
 	public void setFechaDefunción(Date fechaDefunción) {
 		this.fechaDefunción = fechaDefunción;
 	}
-
-	public Set<PeliculaModel> getListaPeliculas() {
-		return listaPeliculas;
-	}
-
-	public void setListaPeliculas(Set<PeliculaModel> listaPeliculas) {
-		this.listaPeliculas = listaPeliculas;
-	}
-
-
 	
 	
 }

@@ -30,8 +30,6 @@ public class DirectorModel {
 
 	private Date fechaDefunción;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<PeliculaModel> listaPeliculas = new HashSet<PeliculaModel>();
 
 	// Getters and Setters
 
@@ -74,15 +72,5 @@ public class DirectorModel {
 	public void setFechaDefunción(Date fechaDefunción) {
 		this.fechaDefunción = fechaDefunción;
 	}
-
-	public Set<PeliculaModel> getListaPeliculas() {
-		return listaPeliculas;
-	}
-
-	public void setListaPeliculas(Set<PeliculaModel> listaPeliculas) {
-		this.listaPeliculas = listaPeliculas;
-	}
-	
-	
 
 }

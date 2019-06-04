@@ -22,19 +22,10 @@ public class GeneroModel {
 	private Integer id;
 	
 	private String genero;
-	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<PeliculaModel> peliculas = new HashSet<PeliculaModel>();
+
 
 	//Getters and Setters
 
-	public Set<PeliculaModel> getPeliculas() {
-		return peliculas;
-	}
-
-	public void setPeliculas(Set<PeliculaModel> peliculas) {
-		this.peliculas = peliculas;
-	}
 
 	public Integer getId() {
 		return id;

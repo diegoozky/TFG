@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.tfg.model.DirectorModel;
 import com.example.tfg.model.PeliculaModel;
+import com.example.tfg.repositorios.DirectorRepository;
 import com.example.tfg.repositorios.PeliculaRepository;
 
 //Añadimos la etiqueta RestController para indicar que es un controlador de un servicio restful
@@ -23,6 +25,9 @@ public class PeliculaController {
 	//A continuacion abrimos el repositorio gracias a la etiqueta Autowired
 	@Autowired
 	PeliculaRepository peliculaRepositorio;
+	
+	@Autowired
+	DirectorRepository repo;
 	
 	//Metodo que devuelve todas las peliculas de nuestra BD
 	@GetMapping
@@ -36,6 +41,8 @@ public class PeliculaController {
 	@CrossOrigin
 	public @ResponseBody boolean addPelis(@RequestBody PeliculaModel p){
 		if(peliculaRepositorio.findByTitulo(p.getTitulo())==null) {
+			DirectorModel d = repo.findByNombre(p.getDirector().getNombre());
+			p.setDirector(d);
 			peliculaRepositorio.save(p);
 			return true;
 		}

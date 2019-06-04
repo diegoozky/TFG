@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
@@ -36,9 +38,11 @@ public class PeliculaModel {
 	private String ruta_img;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="peliculas_genero")
 	private Set<GeneroModel> listaGeneros = new HashSet<GeneroModel>();
 	
 	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="actores_pelicula")
 	private Set<ActorModel> listaActores = new HashSet<ActorModel>();
 	
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -47,6 +51,30 @@ public class PeliculaModel {
 	
 	//getters y setters
 	
+	public Set<GeneroModel> getListaGeneros() {
+		return listaGeneros;
+	}
+
+	public void setListaGeneros(Set<GeneroModel> listaGeneros) {
+		this.listaGeneros = listaGeneros;
+	}
+
+	public Set<ActorModel> getListaActores() {
+		return listaActores;
+	}
+
+	public void setListaActores(Set<ActorModel> listaActores) {
+		this.listaActores = listaActores;
+	}
+
+	public DirectorModel getDirector() {
+		return director;
+	}
+
+	public void setDirector(DirectorModel director) {
+		this.director = director;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -109,31 +137,6 @@ public class PeliculaModel {
 
 	public void setRuta_img(String ruta_img) {
 		this.ruta_img = ruta_img;
-	}
-
-
-	public DirectorModel getDirector() {
-		return director;
-	}
-
-	public void setDirector(DirectorModel director) {
-		this.director = director;
-	}
-
-	public Set<GeneroModel> getListaGeneros() {
-		return listaGeneros;
-	}
-
-	public void setListaGeneros(Set<GeneroModel> listaGeneros) {
-		this.listaGeneros = listaGeneros;
-	}
-
-	public Set<ActorModel> getListaActores() {
-		return listaActores;
-	}
-
-	public void setListaActores(Set<ActorModel> listaActores) {
-		this.listaActores = listaActores;
 	}
 
 }

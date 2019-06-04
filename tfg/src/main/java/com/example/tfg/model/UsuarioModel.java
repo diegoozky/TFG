@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 // la etiqueta crea la tabla en la bd
@@ -33,23 +34,31 @@ public class UsuarioModel {
 	
 	private String password;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<RolModel> listaRoles = new HashSet<RolModel>();
+	@ManyToOne
+	@JoinColumn(name="rolModel_id",referencedColumnName = "id", updatable = false)
+	private RolModel rolModel;
 	
 	
 	/*getters y setters*/
 	
-	public Set<RolModel> getListaRoles() {
-		return listaRoles;
-	}
-
-	public void setListaRoles(Set<RolModel> listaRoles) {
-		this.listaRoles = listaRoles;
-	}
 
 	public Integer getId() {
 		return id;
 	}
+
+	
+
+	public RolModel getRolModel() {
+		return rolModel;
+	}
+
+
+
+	public void setRolModel(RolModel rolModel) {
+		this.rolModel = rolModel;
+	}
+
+
 
 	public void setId(Integer id) {
 		this.id = id;
