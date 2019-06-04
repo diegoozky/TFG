@@ -47,7 +47,7 @@ public class UserController {
 	}
 	
 	//Metodo que inserta un usuario en la bd y devuelve true o false dependiendo si se ha podido realizar la accion
-	@PostMapping
+	@PostMapping(path = "/update")
 	@CrossOrigin
 	public @ResponseBody boolean addUsuario(@RequestBody UsuarioModel u) {
 		if(usuarioRepositorio.findByUsername(u.getUsername())==null) {
