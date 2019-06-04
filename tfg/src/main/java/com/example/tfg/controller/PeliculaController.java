@@ -1,5 +1,8 @@
 package com.example.tfg.controller;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,8 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.tfg.model.DirectorModel;
+import com.example.tfg.model.GeneroModel;
 import com.example.tfg.model.PeliculaModel;
 import com.example.tfg.repositorios.DirectorRepository;
+import com.example.tfg.repositorios.GeneroRepository;
 import com.example.tfg.repositorios.PeliculaRepository;
 
 //Añadimos la etiqueta RestController para indicar que es un controlador de un servicio restful
@@ -27,7 +32,10 @@ public class PeliculaController {
 	PeliculaRepository peliculaRepositorio;
 	
 	@Autowired
-	DirectorRepository repo;
+	DirectorRepository directorRepositorio;
+	
+	@Autowired
+	GeneroRepository generoRepositorio;
 	
 	//Metodo que devuelve todas las peliculas de nuestra BD
 	@GetMapping
@@ -41,8 +49,19 @@ public class PeliculaController {
 	@CrossOrigin
 	public @ResponseBody boolean addPelis(@RequestBody PeliculaModel p){
 		if(peliculaRepositorio.findByTitulo(p.getTitulo())==null) {
-			DirectorModel d = repo.findByNombre(p.getDirector().getNombre());
+			//Buscamos el director en la base de datos y redefinimos el director de la pelicula haciendo referencia a la base de datos
+			DirectorModel d = directorRepositorio.findByNombre(p.getDirector().getNombre());
 			p.setDirector(d);
+			
+			//Hacemos lo mismo con la coleccion de Generos
+			Set<GeneroModel> listaGen = new HashSet<GeneroModel>();
+			for(GeneroModel g : p.getListaGeneros() ) {
+				listaGen.add(g);
+			}
+			p.setListaGeneros(listaGen);
+			
+			//Hace lo mismo con la
+			
 			peliculaRepositorio.save(p);
 			return true;
 		}
