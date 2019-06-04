@@ -1,6 +1,5 @@
 package com.example.tfg.model;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,14 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /* La etiqueta 'Entity' crea la tabla en la bd*/
 @Entity
-@Table(name="Pelicula")
 public class PeliculaModel {
 	
 	//atributos
@@ -40,15 +36,12 @@ public class PeliculaModel {
 	private String ruta_img;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="Genero")
 	private Set<GeneroModel> listaGeneros = new HashSet<GeneroModel>();
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="Actor")
 	private Set<ActorModel> listaActores = new HashSet<ActorModel>();
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="Director")
 	private DirectorModel director;
 
 	

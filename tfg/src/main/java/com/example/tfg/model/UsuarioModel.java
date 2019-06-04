@@ -17,7 +17,6 @@ import javax.persistence.Table;
 // la etiqueta crea la tabla en la bd
 
 @Entity 
-@Table(name="Usuario")
 public class UsuarioModel {
 	
 	//atributos
@@ -35,7 +34,6 @@ public class UsuarioModel {
 	private String password;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="Rol")
 	private Set<RolModel> listaRoles = new HashSet<RolModel>();
 	
 	
