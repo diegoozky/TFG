@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import {MatPaginatorModule, MatTableModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import { LoginComponent } from './login/login.component';
+
+
+import { HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PeliculaComponent
+    PeliculaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,10 @@ import {MatPaginatorModule, MatTableModule, MatFormFieldModule, MatInputModule} 
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,13 +29,21 @@ public class ActorModel {
 	
 	private Date fechaDefunción;
 	
-
+	private String rutaImg;
 	
 	
 	//getters y setters
 	
 	public Integer getId() {
 		return id;
+	}
+
+	public String getRutaImg() {
+		return rutaImg;
+	}
+
+	public void setRutaImg(String rutaImg) {
+		this.rutaImg = rutaImg;
 	}
 
 	public void setId(Integer id) {

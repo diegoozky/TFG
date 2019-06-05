@@ -1,0 +1,54 @@
+<section class="register-account"> 
+  <div class="signform"  style="background-color: black">      
+    <div class="right"  style="background-color: black">
+        <div class="headit">
+          <h4 style="color: white">Login To Your Account</h4>
+        </div>
+        <div class="form">
+          <form class="login-form" id="login-form">
+              <input type="text" placeholder="User Name"/>
+              <input type="password" placeholder="Password"/>        
+              <input class="subbt" [routerLink]="['/listaAdmin']" type="submit" value="Sign In" style="border:none;"/>   
+          </form>
+          <input type="checkbox" id="remember" name="remember"><span style="color:#b6b6b6;font-size: 0.9em;"> Remember Me</span><a href="#">Forgot your password?</a>     
+          <a href="#" style="float:right;margin-right:35px;font-size: 0.9em;" class="bts-a"  data-toggle="modal" data-target="#añadir" >Don't have an account? Sign up!</a>
+   
+        </div>
+    </div>       
+  </div>
+</section>
+
+  <!-- Modal -->
+<div class="modal fade" id="añadir" role="dialog">
+<div class="modal-dialog">
+
+<!-- Modal content-->
+<div class="modal-content">
+  <div class="modal-header">
+      <h4 class="modal-title">Añadir Candidato</h4>
+
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+  </div>
+  <div class="modal-body">
+    <form > 
+
+      Correo <input class="form-control" type="text" name="correo">
+    
+      Nombre de usuario <input class="form-control" type="text" name="user" > 
+      
+      Contraseña <input class="form-control" type="password" name="password_provisional"  >
+
+      Repetir contraseña <input class="form-control" type="password" name="password"><!-- Un evento keypress en el cual se ponga rojo y
+         el boton disabled hasta que sean iguales las dos contraseña, poner tambien en el corre -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modayl">Cerrar</button>
+    <button type="button" (click)="saveUser()" class="btn btn-secondary" data-dismiss="modal" disabled="true">Crear usuario</button>
+    
+
+  </div>
+</div>
+
+</div>
+</div>

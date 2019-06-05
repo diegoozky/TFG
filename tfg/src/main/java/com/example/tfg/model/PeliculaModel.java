@@ -37,6 +37,16 @@ public class PeliculaModel {
 	
 	private String ruta_img;
 	
+	private String descripcion;
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="peliculas_genero")
 	private Set<GeneroModel> listaGeneros = new HashSet<GeneroModel>();

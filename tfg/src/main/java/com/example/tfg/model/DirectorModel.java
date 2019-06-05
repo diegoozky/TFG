@@ -30,8 +30,18 @@ public class DirectorModel {
 
 	private Date fechaDefunción;
 	
+	private String rutaImg;
+
 
 	// Getters and Setters
+
+	public String getRutaImg() {
+		return rutaImg;
+	}
+
+	public void setRutaImg(String rutaImg) {
+		this.rutaImg = rutaImg;
+	}
 
 	public Integer getId() {
 		return id;
