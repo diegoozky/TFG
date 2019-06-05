@@ -18,6 +18,7 @@ import com.example.tfg.model.ActorModel;
 import com.example.tfg.model.DirectorModel;
 import com.example.tfg.model.GeneroModel;
 import com.example.tfg.model.PeliculaModel;
+import com.example.tfg.repositorios.ActorRepository;
 import com.example.tfg.repositorios.DirectorRepository;
 import com.example.tfg.repositorios.GeneroRepository;
 import com.example.tfg.repositorios.PeliculaRepository;
@@ -38,6 +39,9 @@ public class PeliculaController {
 	@Autowired
 	GeneroRepository generoRepositorio;
 	
+	@Autowired
+	ActorRepository actorRepositorio;
+	
 	//Metodo que devuelve todas las peliculas de nuestra BD
 	@GetMapping
 	@CrossOrigin
@@ -57,13 +61,15 @@ public class PeliculaController {
 			//Hacemos lo mismo con la coleccion de Generos
 			Set<GeneroModel> listaGen = new HashSet<GeneroModel>();
 			for(GeneroModel g : p.getListaGeneros() ) {
-				listaGen.add(g);
+				GeneroModel ge = generoRepositorio.findByGenero(g.getGenero());
+				listaGen.add(ge);
 			}
 			p.setListaGeneros(listaGen);
 			
 			//Hacemos lo mismo con la colección de actores
 			Set<ActorModel> listaAct = new HashSet<ActorModel>();
 			for(ActorModel a : p.getListaActores()) {
+				ActorModel ac = actorRepositorio.findByNombre(a.getNombre());
 				listaAct.add(a);
 			}
 			p.setListaActores(listaAct);

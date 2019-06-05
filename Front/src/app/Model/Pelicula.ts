@@ -1,3 +1,6 @@
+import { Genero } from './Genero';
+import { Actor } from './Actor';
+import { Director } from './Director';
 
 export class Pelicula {
     public titulo: string;
@@ -6,7 +9,7 @@ export class Pelicula {
     public premios: string;
     public estreno: string;
     public presupuesto: string;
-    public ruta_img: string;
+    public rutaImg: string;
     public descripcion: string;
     public listaGeneros: Genero[];
     public listaActores: Actor[];

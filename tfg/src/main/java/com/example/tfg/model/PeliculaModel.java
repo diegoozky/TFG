@@ -35,7 +35,7 @@ public class PeliculaModel {
 	
 	private String presupuesto;
 	
-	private String ruta_img;
+	private String rutaImg;
 	
 	private String descripcion;
 
@@ -139,12 +139,12 @@ public class PeliculaModel {
 		this.presupuesto = presupuesto;
 	}
 
-	public String getRuta_img() {
-		return ruta_img;
+	public String getRutaImg() {
+		return rutaImg;
 	}
 
-	public void setRuta_img(String ruta_img) {
-		this.ruta_img = ruta_img;
+	public void setRuta_img(String rutaImg) {
+		this.rutaImg = rutaImg;
 	}
 
 }
