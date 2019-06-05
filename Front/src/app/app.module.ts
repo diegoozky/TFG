@@ -3,27 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { PeliculaComponent } from './pelicula/pelicula.component';
-import { ActorComponent } from './actor/actor.component';
-import { DirectorComponent } from './director/director.component';
-import { MaterialModule } from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PeliculaComponent } from './pelicula/pelicula.component';
+import {MatPaginatorModule, MatTableModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    PeliculaComponent,
-    ActorComponent,
-    DirectorComponent
+    PeliculaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    MatTableModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
