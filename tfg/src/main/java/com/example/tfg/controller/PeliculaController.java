@@ -70,7 +70,7 @@ public class PeliculaController {
 			Set<ActorModel> listaAct = new HashSet<ActorModel>();
 			for(ActorModel a : p.getListaActores()) {
 				ActorModel ac = actorRepositorio.findByNombre(a.getNombre());
-				listaAct.add(a);
+				listaAct.add(ac);
 			}
 			p.setListaActores(listaAct);
 			
