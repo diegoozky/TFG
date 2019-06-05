@@ -17,6 +17,9 @@ export class PeliculaComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
 
   }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 }
 export interface PeriodicElement {
