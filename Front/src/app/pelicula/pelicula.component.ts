@@ -11,11 +11,13 @@ import { Router } from '@angular/router';
 })
 export class PeliculaComponent implements OnInit {
 
+  public p: Pelicula;
   public peliculas: Pelicula[];
   public dataSource: any;
 
   constructor(private peliculaService: PeliculaService,  private router: Router) {
     this.peliculas = new Array<Pelicula>();
+    this.p = new Pelicula();
    }
   displayedColumns: string[] = ['caratula','titulo', 'descripcion'];
 
@@ -34,7 +36,15 @@ export class PeliculaComponent implements OnInit {
                                                            this.dataSource = new MatTableDataSource<Pelicula>(this.peliculas);
                                                            this.dataSource.paginator = this.paginator;
 
-      ;});
+      });
   }
+  public cerrarSesion(): void{
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
 
+  }
+  public verInfo(p: Pelicula): void{
+    this.p = p;
+    console.log(p);
+  }
 }

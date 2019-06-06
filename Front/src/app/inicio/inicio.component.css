@@ -1,4 +1,10 @@
+@font-face{
+    font-family: 'coolvetica';
+    src: url('./../../assets/fuentes/coolvetica.ttf')
+}
 h1, h2, p{
+    font-family: 'coolvetica';
+
     color:white;
 }
 .novedades{
