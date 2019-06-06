@@ -63,6 +63,7 @@ public class PeliculaController {
 			for(GeneroModel g : p.getListaGeneros() ) {
 				GeneroModel ge = generoRepositorio.findByGenero(g.getGenero());
 				listaGen.add(ge);
+				System.out.println("id:"+ ge.getId()+ "genero:"+ge.getGenero());
 			}
 			p.setListaGeneros(listaGen);
 			
