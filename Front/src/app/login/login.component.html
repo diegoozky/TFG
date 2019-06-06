@@ -1,18 +1,17 @@
 <section class="register-account"> 
-  <div class="signform"  style="background-color: black">      
-    <div class="right"  style="background-color: black">
+  <div class="signform"  style="background-color:rgba(0,0,0,0.5)">      
+    <div class="right"  style="">
         <div class="headit">
           <h4 style="color: white">Login To Your Account</h4>
         </div>
         <div class="form">
           <form class="login-form" id="login-form">
-              <input type="text" placeholder="User Name"/>
-              <input type="password" placeholder="Password"/>        
-              <input class="subbt" [routerLink]="['/listaAdmin']" type="submit" value="Sign In" style="border:none;"/>   
+              <input type="text" placeholder="User Name" [(ngModel)]="usuarioEnvio.username" name="username"/>
+              <input type="password" placeholder="Password" [(ngModel)]="usuarioEnvio.password" name="password"/>        
+              <input class="button" type="submit" value="Sign In" (click)="verificar()" style="border:none;"/>   
           </form>
-          <input type="checkbox" id="remember" name="remember"><span style="color:#b6b6b6;font-size: 0.9em;"> Remember Me</span><a href="#">Forgot your password?</a>     
-          <a href="#" style="float:right;margin-right:35px;font-size: 0.9em;" class="bts-a"  data-toggle="modal" data-target="#añadir" >Don't have an account? Sign up!</a>
-   
+          <button class="button"   data-toggle="modal" data-target="#añadir">Don't have an account? Sign up!</button>
+
         </div>
     </div>       
   </div>
@@ -32,19 +31,18 @@
   <div class="modal-body">
     <form > 
 
-      Correo <input class="form-control" type="text" name="correo">
+      Correo <input class="form-control" type="text" name="correo" [(ngModel)]="usuarioCreado.correo">
     
-      Nombre de usuario <input class="form-control" type="text" name="user" > 
+      Nombre de usuario <input class="form-control" type="text" name="username" [(ngModel)]="usuarioCreado.username"> 
       
-      Contraseña <input class="form-control" type="password" name="password_provisional"  >
+      Contraseña <input id="passwordVerificacion" class="form-control" type="password" name="cadena" [(ngModel)]="cadena">
 
-      Repetir contraseña <input class="form-control" type="password" name="password"><!-- Un evento keypress en el cual se ponga rojo y
-         el boton disabled hasta que sean iguales las dos contraseña, poner tambien en el corre -->
+      Repetir contraseña <input class="form-control" type="password" name="password" [(ngModel)]="usuarioCreado.password">
     </form>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modayl">Cerrar</button>
-    <button type="button" (click)="saveUser()" class="btn btn-secondary" data-dismiss="modal" disabled="true">Crear usuario</button>
+    <button type="button"  class="btn btn-secondary" data-dismiss="modal" (click)="crearUsuario()">Crear usuario</button>
     
 
   </div>

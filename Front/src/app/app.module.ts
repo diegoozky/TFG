@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 
 import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ActoresComponent } from './actores/actores.component';
+import { DirectoresComponent } from './directores/directores.component';
 
 
 
@@ -18,7 +20,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     PeliculaComponent,
-    LoginComponent
+    LoginComponent,
+    ActoresComponent,
+    DirectoresComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,30 @@
 table{
     width: 100%;
-    background-colort: transparent; 
+    margin:auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-collapse: collapse;
 }
+
+td, th{
+    border:5px solid rgb(170,57,57);
+}
+td{
+    min-width: 300px;
+    color: black;
+    text-align: center;
+    font-size:1.3em;
+}
+td.mat-cell:first-of-type{
+    padding: 1em;
+}
+th{
+    min-width: 300px;
+
+    color: black;
+    padding: 2em; 
+    font-weight: bold; 
+    font-size: 2em;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+

@@ -1,3 +1,5 @@
+import { Rol } from './Rol';
+
 export class Usuario {
     public correo: string;
     public username: string;

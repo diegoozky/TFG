@@ -1,21 +1,3 @@
-.register-account{
-    background: url(http://cdn.paper4pc.com/images/grunge-texture-wallpaper-5.jpg) no-repeat center top;
-    background-color: transparent;
-    background-image: url(http://cdn.paper4pc.com/images/grunge-texture-wallpaper-5.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center top;
-    background-clip: border-box;
-    background-origin: padding-box;
-    background-size: auto auto;
-    background-size: cover;
-    padding-top: 150px;
-    padding-right: 0px;
-    padding-bottom: 150px;
-    padding-left: 0px;
-    width: auto;
-
-}
 
 /*Login Form CSS*/
 .login-form input{
@@ -24,7 +6,7 @@ border: 1px solid #dddddd;
 padding: 0.7em;
 margin: 0.6em 0;
 border-radius: 0;
-margin-bottom: 15px;
+margin-bottom: 20px;
 }
 .login-form{
 margin-bottom: 30px;
@@ -35,6 +17,7 @@ padding-bottom: 40px;
 padding-top: 35px;
 margin: 0 auto;
 margin-top: auto;
+height: 400px;
 }
 .bts {
 padding: 2em;
@@ -53,66 +36,7 @@ font-family: 'Arimo', sans-serif;
 font-weight: 700;
 font-style: normal;
 }
-.social{
-transition: background 200ms ease-in-out 0s;
--webkit-transition: background 200ms ease-in-out 0s;
--moz-transition: background 200ms ease-in-out 0s;
--o-transition: background 200ms ease-in-out 0s;
--ms-transition: background 200ms ease-in-out 0s;
 
-margin-top: 12px;
--webkit-border-top-left-radius:1px;
--moz-border-radius-topleft:1px;
-border-top-left-radius:1px;
--webkit-border-top-right-radius:1px;
--moz-border-radius-topright:1px;
-border-top-right-radius:1px;
--webkit-border-bottom-right-radius:1px;
--moz-border-radius-bottomright:1px;
-border-bottom-right-radius:1px;
--webkit-border-bottom-left-radius:1px;
--moz-border-radius-bottomleft:1px;
-border-bottom-left-radius:1px;
-text-indent:0;
-display:block;
-color:#ffffff;
-height:50px;
-line-height:50px;
-width: 100%;
-text-decoration:none;
-text-align:center;
-}
-
-.fblogin {   
-background-color:#3b5898;  
-}
-.fblogin:hover {
-background-color:#5177c2;
-}
-.fblogin:active {
-position:relative;
-top:1px;
-}
-.gplogin {  
-background-color:#dd4c39; 
-}
-.gplogin:hover {
-background-color:#f06e60;
-}
-.gplogin:active {
-position:relative;
-top:1px;
-}
-.twlogin { 
-background-color:#00abee;  
-}
-.twlogin:hover {
-background-color:#4cbde6;
-}
-.twlogin:active {
-position:relative;
-top:1px;
-}
 .login-form input:focus, .login-form input:active {
 border-bottom: 2px solid #79B42B;
 outline: none;
@@ -182,7 +106,7 @@ padding-right: 19px;
 
 /*Media Query */
 @media screen  and (min-width: 1400px) {
-.signform { width: 680px; left: 25%; }
+.signform { width: 30%; padding:1em;}
 }
 
 
@@ -209,93 +133,28 @@ left: 1%;
 }
 
 @media screen  and (min-width: 640px) {
-.left {   
-width: 47%;
-display: inline-table;
-margin-left: 20px;
-float: right;
-}
+
 .right {
-width: 40%;
-display: inline-table;
-margin-left: 50px; 
+margin: auto; 
 }
 }
 
 @media screen  and (max-width: 640px) {
-.left { 
-width: 100%;
-display: inline-table;  
-margin-bottom: 25px;
-}
+
 .right {
-width: 85%;
-display: inline-table;
+width: 80%;
 margin-left: 20px;  
 }
 .signform { 
-width: 50%;
+width: 80%;
 min-width:255px;
 }
-form#login-form:before {
-content: ''; 
-position: absolute;
-top: 0;
-right: 0;
-left: 0;
-bottom: 0;
-margin: auto;
+
 
 }
-form#login-form:after {
-content: '';
-position: absolute;   
-top: 0;
-right: 0;
-left: 0;
-bottom: 0;
-margin: auto;
-height:0em;
-width: 0em;
-left: 0em;
-top: 0em;
 
-}
-}
-@media screen  and (max-width: 1500px) and (min-width: 650px) {
-form#login-form::before {
-content: 'or';
-color: #79b42b;
-position: absolute;   
-top: 0;
-right: 0;
-left: 0;
-bottom: 0;
-margin: auto;
-height: 0.5em;
-width: 0.5em;
-left: 1.5em;
-top: 4.2em;
-z-index: 900;
-}
-form#login-form::after {
-content: '';
-position: absolute;
-background: rgba(128, 128, 128, 0.3);
-top: 0;
-right: 0;
-left: 0;
-bottom: 15px;
-margin: auto;
-height: 3.25em;
-width: 0.1em;
-left: 2.15em;
-top: -2.8em;
--moz-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
--webkit-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
-}
-}
+
+
 @media screen  and (max-width: 640px) and (min-width: 460px) {
 .signform { 
 left: 25%;
@@ -323,3 +182,31 @@ width: 5%;
 font-size: 20px;
 margin-left: 20px;
 }
+
+.button {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; 
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #44389A;
+    border: none;
+    box-shadow: 0 9px #999;
+  }
+input.button{
+    background-color: #79B42B;
+
+}
+input.button:hover{
+    background-color: rgb(85, 126, 32);
+}
+  .button:hover {background-color: rgb(50, 42, 114)}
+  
+  .button:active {
+    background-color: rgb(50, 42, 114);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

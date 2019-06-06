@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Usuario } from '../Model/Usuario';
-
+import { Director } from '../Model/Director';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class DirectoresService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   private url = 'http://localhost:8080/user';
   constructor(private http: HttpClient) { }
-  public verificacion(u: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>(this.url, u, {headers: this.httpHeaders});
-  }
 
-  public crear(u: Usuario): Observable<boolean> {
-    return this.http.post<boolean>(this.url + '/create', u , {headers: this.httpHeaders});
+  public loadDirectores(): Observable<Director[]>{
+    return this.http.get<Director[]>(this.url);
   }
 }

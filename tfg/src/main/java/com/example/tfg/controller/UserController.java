@@ -43,10 +43,14 @@ public class UserController {
 		UsuarioModel uVerificado = new UsuarioModel();
 		if(usuarioRepositorio.findByUsername(u.getUsername())!=null) {
 			UsuarioModel uOk= usuarioRepositorio.findByUsername(u.getUsername());
-			uVerificado.setUsername(uOk.getUsername());
-			uVerificado.setCorreo(uOk.getCorreo());
-			uVerificado.setRolModel(uOk.getRolModel());
-			return uVerificado;
+			System.out.println(u.getPassword() +"   " +uOk.getPassword());
+			if(u.getPassword().equals(uOk.getPassword())) {
+				uVerificado.setUsername(uOk.getUsername());
+				uVerificado.setCorreo(uOk.getCorreo());
+				uVerificado.setRolModel(uOk.getRolModel());
+				return uVerificado;
+			}
+			return null;
 		}
 		return null;
 	}
@@ -55,14 +59,17 @@ public class UserController {
 	@PostMapping(path = "/create")
 	@CrossOrigin
 	public @ResponseBody boolean addUsuario(@RequestBody UsuarioModel u) {
-		if(usuarioRepositorio.findByUsername(u.getUsername())==null) {
-			RolModel r = rolRepositorio.findByRol(u.getRolModel().getRol());
-			u.setRolModel(r);
-			usuarioRepositorio.save(u);
-			return true;
+		if(usuarioRepositorio.findByCorreo(u.getCorreo())==null) {
+			if(usuarioRepositorio.findByUsername(u.getUsername())==null) {
+				u.setRolModel(rolRepositorio.findByRol("USER"));
+				usuarioRepositorio.save(u);
+				return true;
+			}
+			return false;
 		}
 		return false;
 	}
+	
 	
 	//Metodo actualiza un usuario y devuelve true o false si es posible la accion 
 	@PutMapping
