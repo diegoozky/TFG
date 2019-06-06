@@ -13,6 +13,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ActoresComponent } from './actores/actores.component';
 import { DirectoresComponent } from './directores/directores.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 
@@ -22,7 +23,8 @@ import { DirectoresComponent } from './directores/directores.component';
     PeliculaComponent,
     LoginComponent,
     ActoresComponent,
-    DirectoresComponent
+    DirectoresComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

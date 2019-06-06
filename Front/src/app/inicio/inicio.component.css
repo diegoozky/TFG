@@ -1,0 +1,28 @@
+h1, h2, p{
+    color:white;
+}
+.novedades{
+    display: flex;
+    padding:1em;
+}
+.left{
+    width: 40%;
+    margin-right: 5%;
+}
+.right{
+    width: 40%;
+    margin-left: 5%;
+}
+video{
+    display:block;
+    width:50%;
+    margin: auto;
+}
+.video{
+    text-align: center
+}
+.botones{
+    text-align: center;
+    margin-top:7%;
+    margin-bottom: 7%;
+}

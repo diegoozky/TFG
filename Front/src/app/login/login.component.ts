@@ -21,16 +21,19 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(sessionStorage.getItem('user') != null){
+      this.router.navigate(['/inicio']);
+    }
   }
   public verificar(): void{
     if(this.usuarioEnvio.username != null && this.usuarioEnvio.password != null){
       this.loginService.verificacion(this.usuarioEnvio).subscribe(res=>{
-        if(res != null){
+        if(res != null) {
           sessionStorage.setItem('user', res.username);
           sessionStorage.setItem('rol', res.rolModel.rol);
           alert('Usuario correcto');
-          this.router.navigate(['/pelicula']);
-        } else{
+          this.router.navigate(['/inicio']);
+        } else {
           alert('Alguna credencial es incorrecta, vuelve a intentarlo');
         }
       })

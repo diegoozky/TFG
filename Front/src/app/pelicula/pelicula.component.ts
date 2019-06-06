@@ -3,6 +3,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { Pelicula } from '../Model/Pelicula';
 import { PeliculaService } from './pelicula.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
@@ -13,7 +14,7 @@ export class PeliculaComponent implements OnInit {
   public peliculas: Pelicula[];
   public dataSource: any;
 
-  constructor(private peliculaService: PeliculaService) {
+  constructor(private peliculaService: PeliculaService,  private router: Router) {
     this.peliculas = new Array<Pelicula>();
    }
   displayedColumns: string[] = ['caratula','titulo', 'descripcion'];
@@ -21,6 +22,9 @@ export class PeliculaComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   ngOnInit() {
     this.loadPeliculas();
+    if(sessionStorage.getItem('user') == null){
+      this.router.navigate(['/login']);
+    }
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

@@ -10,7 +10,7 @@ export class LoginService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   private url = 'http://localhost:8080/user';
   constructor(private http: HttpClient) { }
-  public verificacion(u: Usuario): Observable<Usuario>{
+  public verificacion(u: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.url, u, {headers: this.httpHeaders});
   }
 
