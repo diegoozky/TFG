@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.tfg.model.DirectorModel;
 import com.example.tfg.repositorios.DirectorRepository;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 //Añadimos la etiqueta RestController para indicar que es un controlador de un servicio restful
 //Con la etiqueta RequestMapping indicamos el path que va a tener
@@ -20,8 +23,11 @@ public class DirectorController {
 	@Autowired
 	DirectorRepository directorRepositorio;
 	
+	static Logger logHelper = LogManager.getLogger(DirectorModel.class);
+	
 	//Metodo que devuelve todos los directores de la bd
 	public @ResponseBody Iterable<DirectorModel> allDirectores(){
+		logHelper.warn("Se han devuelto todos los actores");
 		return directorRepositorio.findAll();
 	}
 	
@@ -29,8 +35,10 @@ public class DirectorController {
 	public @ResponseBody boolean addDirector(@RequestBody DirectorModel d){
 		if(directorRepositorio.findByNombre(d.getNombre())==null) {
 			directorRepositorio.save(d);
+			logHelper.warn("Se ha añadido el actor correctamente");
 			return true;
 		}
+		logHelper.error("No se ha podido crear el actor");
 		return false;
 	}
 	
@@ -38,8 +46,10 @@ public class DirectorController {
 	public @ResponseBody boolean updateDirector(@RequestBody DirectorModel d) {
 		if(directorRepositorio.findByNombre(d.getNombre())!=null) {
 			directorRepositorio.save(d);
+			logHelper.warn("Se ha actualizado el actor correctamente");
 			return true;
 		}
+		logHelper.error("No se ha podido acturalizar el actor");
 		return false;
 	}
 	
@@ -47,9 +57,10 @@ public class DirectorController {
 	public @ResponseBody boolean borrarDirector(@RequestBody DirectorModel d) {
 		if(directorRepositorio.findByNombre(d.getNombre())!=null) {
 			directorRepositorio.delete(d);
+			logHelper.warn("Se ha borrar el actor correctamente");
 			return true;
 		}
-		
+		logHelper.error("No se ha podido borrar el actor");
 		return false;
 	}
 }

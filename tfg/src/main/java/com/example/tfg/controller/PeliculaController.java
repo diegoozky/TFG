@@ -23,6 +23,9 @@ import com.example.tfg.repositorios.DirectorRepository;
 import com.example.tfg.repositorios.GeneroRepository;
 import com.example.tfg.repositorios.PeliculaRepository;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 //Añadimos la etiqueta RestController para indicar que es un controlador de un servicio restful
 //Con la etiqueta RequestMapping indicamos el path que va a tener
 @RestController
@@ -42,10 +45,14 @@ public class PeliculaController {
 	@Autowired
 	ActorRepository actorRepositorio;
 	
+	static Logger logHelper = LogManager.getLogger(PeliculaModel.class);
+
+	
 	//Metodo que devuelve todas las peliculas de nuestra BD
 	@GetMapping
 	@CrossOrigin
 	public @ResponseBody Iterable<PeliculaModel> allPelis(){
+		logHelper.warn("Se han devuelto todas las pelis");
 		return peliculaRepositorio.findAll();
 	}
 	
@@ -76,8 +83,10 @@ public class PeliculaController {
 			p.setListaActores(listaAct);
 			
 			peliculaRepositorio.save(p);
+			logHelper.warn("Se ha añadido correctamente la pelicula");
 			return true;
 		}
+		logHelper.error("No se ha podido crear correctamente la pelicula");
 		return false;
 	}
 	
@@ -87,8 +96,10 @@ public class PeliculaController {
 	public @ResponseBody boolean updatePelis(@RequestBody PeliculaModel p){
 		if(peliculaRepositorio.findByTitulo(p.getTitulo())!=null){
 			peliculaRepositorio.save(p);
+			logHelper.warn("Se ha actualizado correctamente la pelicula");
 			return true;
 		}
+		logHelper.error("No se ha podido actualizar correctamente la pelicula");
 		return false;
 	}
 	
@@ -98,8 +109,10 @@ public class PeliculaController {
 	public @ResponseBody boolean borrarPelis(@RequestBody PeliculaModel p) {
 		if(peliculaRepositorio.findByTitulo(p.getTitulo())!=null){
 			peliculaRepositorio.delete(p);
+			logHelper.warn("Se ha borrado correctamente la pelicula");
 			return true;
 		}
+		logHelper.error("No se ha podido borrar correctamente la pelicula");
 		return false;
 	}
 }

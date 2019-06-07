@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.tfg.model.RolModel;
+
 import com.example.tfg.model.UsuarioModel;
 import com.example.tfg.repositorios.RolRepository;
 import com.example.tfg.repositorios.UsuarioRepository;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 //Añadimos la etiqueta RestController para indicar que es un controlador de un servicio restful
 //Con la etiqueta RequestMapping indicamos el path que va a tener
@@ -29,6 +32,8 @@ public class UserController {
 	@Autowired
 	RolRepository rolRepositorio;
 	
+	static Logger logHelper = LogManager.getLogger(UsuarioModel.class);
+
 	//Metodo que devuelve todos las usuarios de nuestra BD
 	@GetMapping
 	@CrossOrigin
@@ -43,15 +48,18 @@ public class UserController {
 		UsuarioModel uVerificado = new UsuarioModel();
 		if(usuarioRepositorio.findByUsername(u.getUsername())!=null) {
 			UsuarioModel uOk= usuarioRepositorio.findByUsername(u.getUsername());
-			System.out.println(u.getPassword() +"   " +uOk.getPassword());
 			if(u.getPassword().equals(uOk.getPassword())) {
 				uVerificado.setUsername(uOk.getUsername());
 				uVerificado.setCorreo(uOk.getCorreo());
 				uVerificado.setRolModel(uOk.getRolModel());
+				logHelper.warn("Usuario correcto");
 				return uVerificado;
 			}
+			logHelper.error("Usuario no correcto");
 			return null;
 		}
+		logHelper.error("Usuario no correcto");
+
 		return null;
 	}
 	
@@ -63,10 +71,13 @@ public class UserController {
 			if(usuarioRepositorio.findByUsername(u.getUsername())==null) {
 				u.setRolModel(rolRepositorio.findByRol("USER"));
 				usuarioRepositorio.save(u);
+				logHelper.warn("Usuario creado correctamente");
 				return true;
 			}
+			logHelper.error("Error al crear usuario, el usuario ya existe");
 			return false;
 		}
+		logHelper.error("Error al crear usuario, correo incorrector");
 		return false;
 	}
 	
@@ -77,8 +88,10 @@ public class UserController {
 	public @ResponseBody boolean updateUsuarios(@RequestBody UsuarioModel u) {
 		if(usuarioRepositorio.findByUsername(u.getUsername())!=null) {
 			usuarioRepositorio.save(u);
+			logHelper.warn("Usuario actualizado correctamente");
 			return true;
 		}
+		logHelper.error("Error al actualizar usuario");
 		return false;
 	}
 	
@@ -87,9 +100,13 @@ public class UserController {
 	@CrossOrigin
 	public @ResponseBody boolean borrarUsuarios(@RequestBody UsuarioModel u) {
 		if(usuarioRepositorio.findByUsername(u.getUsername())!=null) {
-			usuarioRepositorio.delete(u);
+			UsuarioModel uBorrado = usuarioRepositorio.findByUsername(u.getUsername());
+			usuarioRepositorio.delete(uBorrado);
+			logHelper.warn("Usuario borrado correctamente");
 			return true;
 		}
+		logHelper.error("Error al borrar usuario");
+
 		return false;
 	}
 }
