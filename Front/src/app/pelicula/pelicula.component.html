@@ -27,7 +27,7 @@
     <!-- Titulo Column -->
     <ng-container matColumnDef="titulo" >
       <th mat-header-cell *matHeaderCellDef style="text-align:center;padding:1em;"> Titulo</th>
-      <td mat-cell *matCellDef="let element" (click)="verInfo(element)"> {{element.titulo}}</td>
+      <td mat-cell *matCellDef="let element" (click)="verInfo(element)" data-toggle="modal" data-target="#myModal" style="cursor:pointer"> {{element.titulo}}</td>
     </ng-container>
 
     <!-- Descripcion Column -->

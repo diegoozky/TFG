@@ -14,6 +14,6 @@ export class ActoresService {
   constructor(private http: HttpClient) { }
 
   public loadActores(): Observable<Actor[]>{
-    return this.http.get<Actor[]>(this.url);
+    return this.http.get<Actor[]>(this.url+'/actores');
   }
 }
