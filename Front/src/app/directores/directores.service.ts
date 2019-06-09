@@ -7,7 +7,7 @@ import { Director } from '../Model/Director';
 })
 export class DirectoresService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
-  private url = 'http://localhost:8080/user';
+  private url = 'http://localhost:8080/director';
   constructor(private http: HttpClient) { }
 
   public loadDirectores(): Observable<Director[]>{

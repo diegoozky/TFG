@@ -1,0 +1,48 @@
+.contenedor{
+    height: 800px;
+    overflow: auto;
+}
+table{
+        width: 80%;
+    margin: auto;
+    color:white;
+}
+td, th{
+    text-align: center;
+    width:49%;
+}
+.menu{
+    margin-bottom: 4%;
+}
+.opcion{
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    background-color: black;
+    transition: 2s;
+    height: 64px;
+}
+.opcion:hover{
+
+    background-color: grey;
+    font-size: 1.75rem;
+    height: 64px;
+    padding-top:-1em;
+}
+a{
+    text-decoration: none;
+    color: white
+}
+
+.borde{
+    border-radius: 25px 0px 0px 25px;
+}
+
+.bordefinal{
+    border-radius: 0px 25px 25px 0px;
+    background-color: red;
+    
+}

@@ -4,26 +4,28 @@
         <div class="col opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
         <div class="col opcion "><a [routerLink]="['/pelicula']">Peliculas</a></div>
         <div class="col opcion"><a [routerLink]="['/actores']">Actores</a></div>
-        <div class="col opcion"><a [routerLink]="['/directores']">Directorios</a></div>
+        <div class="col opcion"><a [routerLink]="['/directores']">Directores</a></div>
         <div class="col opcion "><a [routerLink]="['/listaAdmin']">Noticias</a></div>
         <div class="col opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
 
     </div>
   </div>
 </div>
-<div class="container contenedor">
-
-  <table>
+<div class="container contenedor" >
+  <table *ngFor="let item of actores">
     <thead>
       <tr>
-        <th>Foto</th>
-        <th>Nombre</th>
+        <th colspan=2>{{item.nombre}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of actores">
-        <td><img src={{item.rutaImg}} title={{item.nombre}} alt={{item.nombre}} width="20%"></td>
-        <td>{{item.nombre}}</td>
+      <tr>
+        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%"></td>
+      </tr>
+      <tr>
+        <td>Fecha de nacimiento:</td><td>{{item.fechaNacimiento}}</td>
+      </tr>
+      <tr><td class="col1">Lugar de nacimiento:</td><td class="col2">{{item.lugarNacimiento}}</td>
       </tr>
     </tbody>
   </table>

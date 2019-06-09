@@ -1,16 +1,10 @@
 .contenedor{
-    height: 800px;
+    height: 1200px;
     overflow: auto;
-}
-table{
-        width: 80%;
-    margin: auto;
     color:white;
+    margin-bottom: 8%;
 }
-td, th{
-    text-align: center;
-    width:49%;
-}
+
 .menu{
     margin-bottom: 4%;
 }
@@ -45,4 +39,29 @@ a{
     border-radius: 0px 25px 25px 0px;
     background-color: red;
     
+}
+.actor{
+    margin-bottom: 2em;
+}
+table{
+    width: 40%;
+    margin:auto;
+    text-align: center;
+    margin-bottom: 4em;
+    border-collapse: separate;
+}
+th, td{
+    border:2px solid white;
+    padding:1em; 
+
+}
+table thead tr th{
+    background-color:rgba(132, 167, 221, 0.726); 
+    border-radius: 25px 25px 0px 0px;
+}
+.col1{
+    border-radius: 0px 0px 0px 25px;
+}
+.col2{
+    border-radius: 0px 0px 25px 0px;
 }
