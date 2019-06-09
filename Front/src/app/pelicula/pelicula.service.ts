@@ -17,5 +17,9 @@ export class PeliculaService {
     return this.http.get<Pelicula[]>(this.url);
   }
 
+  public borrarPelicula(id: number): Observable<boolean>{
+    return this.http.delete<boolean>(this.url + '?id=' + id);
+  }
+
 
 }

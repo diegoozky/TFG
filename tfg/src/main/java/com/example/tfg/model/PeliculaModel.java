@@ -41,15 +41,15 @@ public class PeliculaModel {
 	
 	private String trailer;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	@JoinTable(name="peliculas_genero")
 	private Set<GeneroModel> listaGeneros = new HashSet<GeneroModel>();
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	@JoinTable(name="actores_pelicula")
 	private Set<ActorModel> listaActores = new HashSet<ActorModel>();
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private DirectorModel director;
 
 	

@@ -50,4 +50,8 @@ export class PeliculaComponent implements OnInit {
   public trailer(): void{
     window.open(this.p.trailer);
   }
+  public eliminar(p: any): void{
+    this.peliculaService.borrarPelicula(p.id).subscribe();
+    window.location.reload();
+  }
 }

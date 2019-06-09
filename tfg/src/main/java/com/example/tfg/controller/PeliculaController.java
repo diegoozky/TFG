@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -106,9 +107,10 @@ public class PeliculaController {
 	//Borra un dato de la bd y devuelve un true o un false si es posible la acción
 	@DeleteMapping
 	@CrossOrigin
-	public @ResponseBody boolean borrarPelis(@RequestBody PeliculaModel p) {
-		if(peliculaRepositorio.findByTitulo(p.getTitulo())!=null){
-			peliculaRepositorio.delete(p);
+
+	public @ResponseBody boolean borrarPelis(@RequestParam Integer id) {
+		if(peliculaRepositorio.findById(id) != null){
+			peliculaRepositorio.deleteById(id);
 			logHelper.warn("Se ha borrado correctamente la pelicula");
 			return true;
 		}
