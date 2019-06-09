@@ -52,6 +52,9 @@
 
         <div class="modal-body">
          <h1>{{p.titulo}}</h1> <br>
+         <div class="imagen">
+          <img src={{p.rutaImg}} width="70%">
+         </div>
          <b>Descripcion:</b><br> {{p.descripcion}}<br>
          <b>Duración:</b> {{p.duracion}}<br>
          <b>Estreno:</b> {{p.estreno}}<br>
@@ -68,7 +71,8 @@
          </span>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="trailer()">Ver Trailer</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       

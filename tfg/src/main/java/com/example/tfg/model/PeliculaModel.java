@@ -38,6 +38,8 @@ public class PeliculaModel {
 	private String rutaImg;
 	
 	private String descripcion;
+	
+	private String trailer;
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="peliculas_genero")
@@ -52,8 +54,21 @@ public class PeliculaModel {
 
 	
 	//getters y setters
+	
 	public String getDescripcion() {
 		return descripcion;
+	}
+
+	public String getTrailer() {
+		return trailer;
+	}
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
+
+	public void setRutaImg(String rutaImg) {
+		this.rutaImg = rutaImg;
 	}
 
 	public void setDescripcion(String descripcion) {
