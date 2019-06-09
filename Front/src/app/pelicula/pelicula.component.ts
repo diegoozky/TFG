@@ -47,4 +47,7 @@ export class PeliculaComponent implements OnInit {
     this.p = p;
     console.log(p);
   }
+  public trailer(): void{
+    window.open(this.p.trailer);
+  }
 }

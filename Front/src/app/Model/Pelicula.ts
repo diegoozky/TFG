@@ -14,4 +14,5 @@ export class Pelicula {
     public listaGeneros: Genero[];
     public listaActores: Actor[];
     public director: Director;
+    public trailer: string;
 }

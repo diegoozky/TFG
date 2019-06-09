@@ -27,7 +27,7 @@
     <!-- Titulo Column -->
     <ng-container matColumnDef="titulo" >
       <th mat-header-cell *matHeaderCellDef style="text-align:center;padding:1em;"> Titulo</th>
-      <td mat-cell *matCellDef="let element"> {{element.titulo}}</td>
+      <td mat-cell *matCellDef="let element" (click)="verInfo(element)"> {{element.titulo}}</td>
     </ng-container>
 
     <!-- Descripcion Column -->
@@ -55,24 +55,24 @@
          <div class="imagen">
           <img src={{p.rutaImg}} width="70%">
          </div>
-         <b>Descripcion:</b><br> {{p.descripcion}}<br>
-         <b>Duración:</b> {{p.duracion}}<br>
-         <b>Estreno:</b> {{p.estreno}}<br>
-         <b>Productora:</b><br>{{p.productora}}<br>
-         <b>Premios:</b><br>{{p.premios}}<br>
-         <b>Director:</b><br>{{p.director?.nombre}}<br>
+         <b>Descripcion:</b><br> {{p.descripcion}}<br><br>
+         <b>Duración:</b> {{p.duracion}}<br><br>
+         <b>Estreno:</b> {{p.estreno}}<br><br>
+         <b>Productora:</b><br>{{p.productora}}<br><br>
+         <b>Premios:</b><br>{{p.premios}}<br><br>
+         <b>Director:</b><br>{{p.director?.nombre}}<br><br>
          <b>Actores:</b><br>
          <span *ngFor="let item of p.listaActores">
             {{item.nombre}}<br>
-         </span>
+         </span><br>
          <b>Generos:</b><br>
          <span *ngFor="let item of p.listaGeneros">
             {{item.genero}}<br>
-         </span>
+         </span><br>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="trailer()">Ver Trailer</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="trailer()">Ver Trailer</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
       

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2019 a las 12:54:38
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Tiempo de generación: 09-06-2019 a las 18:58:05
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,11 +42,13 @@ INSERT INTO `actores_pelicula` (`pelicula_model_id`, `lista_actores_id`) VALUES
 (2, 2),
 (3, 3),
 (3, 4),
+(4, 5),
 (4, 6),
 (5, 7),
 (5, 8),
 (6, 11),
 (6, 12),
+(7, 13),
 (7, 14),
 (8, 17),
 (8, 18),
@@ -204,24 +206,25 @@ CREATE TABLE `pelicula_model` (
   `productora` varchar(255) DEFAULT NULL,
   `ruta_img` varchar(255) DEFAULT NULL,
   `titulo` varchar(255) DEFAULT NULL,
-  `director_id` int(11) DEFAULT NULL
+  `director_id` int(11) DEFAULT NULL,
+  `trailer` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `pelicula_model`
 --
 
-INSERT INTO `pelicula_model` (`id`, `descripcion`, `duracion`, `estreno`, `premios`, `presupuesto`, `productora`, `ruta_img`, `titulo`, `director_id`) VALUES
-(2, 'Una joven de la alta sociedad abandona a su arrogante pretendiente por un artista humilde en el trasatlántico que se hundió durante su viaje inaugural.\r\n\r\nFinJuego\r\n', '3h 15m', '1997', 'Oscar a la mejor película, Oscar a la mejor dirección', '$200 000 000', '20th Century Fox, Paramount Pictures,Lightstorm Entertainment', './../../assets/img/pelis/titanic.jpg', 'Titanic', 1),
-(3, 'Los 	Vengadores restantes deben encontrar una manera de recuperar a sus aliados para un enfrentamiento épico con Thanos, el malvado que diezmó el planeta y el universo.\r\n', '3h 1m', '2019', ' ', '$356 000 000', 'Marvel Studios', './../../assets/img/pelis/avenger.jpg', 'Endgame', 2),
-(4, 'El rebelde Danny Zuko y la inocente australiana Sandy mantienen un romance durante las vacaciones, creyendo que no se volverán a ver; sin embargo, para sorpresa de ambos, se reencuentran en la escuela secundaria al empezar el nuevo curso.\r\n', '1h 50m', '1978', 'Óscar 1978', '$6 000 000', 'RSO Records, Paramount Pictures', './../../assets/img/pelis/grease.jpg', 'Grease', 3),
-(5, 'Freddie desafía los estereotipos y se convierte en uno de los vocalistas más reconocidos de la música mundial. Después de dejar la banda Queen para seguir una carrera como solista, Mercury se reúne con la banda para dar una de las mejores actuaciones', '2h 14m', '2018', 'Oscar Mejor película', '$52 400 000', 'GK Films', './../../assets/img/pelis/bohemian_rhapsody.jpg', 'Bohemian Rhapsody', 4),
-(6, 'La simpleza e inocencia de un sureño lo impulsan a través de hechos importantes de la historia moderna de EE.UU.\r\n', '2h 22m', '1994', 'Oscar a la mejor película', '$55 000 000 ', 'Paramount Pictures', './../../assets/img/pelis/forrest.jpg', 'Forrest Gump', 5),
-(7, 'Una adaptación ganadora del Premio de la Academia, de la novela de Mario Puzo acerca de la familia Corleone.', '2h 55m', '1972', '', '$6 000 000', 'Paramount Pictures', './../../assets/img/pelis/elpadrino.jpg', 'El Padrino', 6),
-(8, 'Una extraña amistad se desarrolla entre un millonario que quedó paralítico en un accidente y un joven de los suburbios.', '1h 58m', '2011', 'Premio Goya a la mejor película europea', '€10 000 000', 'Gaumont Film Company', './../../assets/img/pelis/intouchables.jpg', 'Intocable', 8),
-(9, 'Este drama se centra en la vida de la petulante belleza sureña.La película narra su supervivencia a través de la historia trágica del Sur durante la Guerra Civil y la Reconstrucción, y sus enredados amorosos con Ashley Wilkes y Rhett Butler.', '3h 58m\r\n', '1939', ' Oscar a la mejor película', '$3 900 000\r\n\r\n', 'Metro-Goldwyn-Mayer', './../../assets/img/pelis/lo_que_el.jpg', 'Lo que el viento se llevó', 9),
-(10, 'Un asesino cibernético del futuro es enviado a Los Ángeles, para matar a la mujer que procreará a un líder.', '1h 48m', '1984', '', '$6 400 000', 'Hemdale Film', './../../assets/img/pelis/terminator.jpg', 'Terminator', 1),
-(11, 'Durante la Segunda Guerra Mundial, el pequeño hijo de un comandante de un campo de concentración desarrolla una amistad prohibida con un niño judío de 8 años.', '1h 34m', '2008', 'A la mejor actriz Vera Farmiga', '$12 500 000', 'BBC Films', './../../assets/img/pelis/El_Nino_Con_El_Pijama_De_Rayas-Cartel.jpg', 'El niño con el pijama de rayas', 7);
+INSERT INTO `pelicula_model` (`id`, `descripcion`, `duracion`, `estreno`, `premios`, `presupuesto`, `productora`, `ruta_img`, `titulo`, `director_id`, `trailer`) VALUES
+(2, 'Una joven de la alta sociedad abandona a su arrogante pretendiente por un artista humilde en el trasatlántico que se hundió durante su viaje inaugural.\r\n', '3h 15m', '1997', 'Oscar a la mejor película, Oscar a la mejor dirección', '$200 000 000', '20th Century Fox, Paramount Pictures,Lightstorm Entertainment', './../../assets/img/pelis/titanic.jpg', 'Titanic', 1, 'https://www.youtube.com/watch?v=2e-eXJ6HgkQ'),
+(3, 'Los 	Vengadores restantes deben encontrar una manera de recuperar a sus aliados para un enfrentamiento épico con Thanos, el malvado que diezmó el planeta y el universo.\r\n', '3h 1m', '2019', ' ', '$356 000 000', 'Marvel Studios', './../../assets/img/pelis/avenger.jpg', 'Endgame', 2, 'https://www.youtube.com/watch?v=TcMBFSGVi1c'),
+(4, 'El rebelde Danny Zuko y la inocente australiana Sandy mantienen un romance durante las vacaciones, creyendo que no se volverán a ver; sin embargo, para sorpresa de ambos, se reencuentran en la escuela secundaria al empezar el nuevo curso.\r\n', '1h 50m', '1978', 'Óscar 1978', '$6 000 000', 'RSO Records, Paramount Pictures', './../../assets/img/pelis/grease.jpg', 'Grease', 3, 'https://www.youtube.com/watch?v=f2CCEixOVVU'),
+(5, 'Freddie desafía los estereotipos y se convierte en uno de los vocalistas más reconocidos de la música mundial. Después de dejar la banda Queen para seguir una carrera como solista, Mercury se reúne con la banda para dar una de las mejores actuaciones.', '2h 14m', '2018', 'Oscar Mejor película', '$52 400 000', 'GK Films', './../../assets/img/pelis/bohemian_rhapsody.jpg', 'Bohemian Rhapsody', 4, 'https://www.youtube.com/watch?v=LTAIlPsMOs4'),
+(6, 'La simpleza e inocencia de un sureño lo impulsan a través de hechos importantes de la historia moderna de EE.UU.\r\n', '2h 22m', '1994', 'Oscar a la mejor película', '$55 000 000 ', 'Paramount Pictures', './../../assets/img/pelis/forrest.jpg', 'Forrest Gump', 5, 'https://www.youtube.com/watch?v=Cyh1LpxnaxI'),
+(7, 'Una adaptación ganadora del Premio de la Academia, de la novela de Mario Puzo acerca de la familia Corleone.', '2h 55m', '1972', '', '$6 000 000', 'Paramount Pictures', './../../assets/img/pelis/elpadrino.jpg', 'El Padrino', 6, 'https://www.youtube.com/watch?v=gCVj1LeYnsc'),
+(8, 'Una extraña amistad se desarrolla entre un millonario que quedó paralítico en un accidente y un joven de los suburbios.', '1h 58m', '2011', 'Premio Goya a la mejor película europea', '€10 000 000', 'Gaumont Film Company', './../../assets/img/pelis/intouchables.jpg', 'Intocable', 8, 'https://www.youtube.com/watch?v=aYCSrM8mmmo'),
+(9, 'Este drama se centra en la vida de la petulante belleza sureña.La película narra su supervivencia a través de la historia trágica del Sur durante la Guerra Civil y la Reconstrucción, y sus enredados amorosos con Ashley Wilkes y Rhett Butler.', '3h 58m\r\n', '1939', ' Oscar a la mejor película', '$3 900 000\r\n\r\n', 'Metro-Goldwyn-Mayer', './../../assets/img/pelis/lo_que_el.jpg', 'Lo que el viento se llevó', 9, 'https://www.youtube.com/watch?v=lZfaM3ghoGY'),
+(10, 'Un asesino cibernético del futuro es enviado a Los Ángeles, para matar a la mujer que procreará a un líder.', '1h 48m', '1984', '', '$6 400 000', 'Hemdale Film', './../../assets/img/pelis/terminator.jpg', 'Terminator', 1, 'https://www.youtube.com/watch?v=k64P4l2Wmeg'),
+(11, 'Durante la Segunda Guerra Mundial, el pequeño hijo de un comandante de un campo de concentración desarrolla una amistad prohibida con un niño judío de 8 años.', '1h 34m', '2008', 'A la mejor actriz Vera Farmiga', '$12 500 000', 'BBC Films', './../../assets/img/pelis/El_Nino_Con_El_Pijama_De_Rayas-Cartel.jpg', 'El niño con el pijama de rayas', 7, 'https://www.youtube.com/watch?v=hd028fGZdG8');
 
 -- --------------------------------------------------------
 
