@@ -62,9 +62,9 @@
          <b>Estreno:</b> {{p.estreno}}<br><br>
          <b>Productora:</b><br>{{p.productora}}<br><br>
          <b>Premios:</b><br>{{p.premios}}<br><br>
-         <b>Director:</b><br><span  data-toggle="modal" data-target="#director" style="cursor:pointer" (click)="director(p.director)">{{p.director?.nombre}}</span><br><br>
+         <b>Director:</b><br><span class="directorModal" data-toggle="modal" data-target="#director" style="cursor:pointer" (click)="director(p.director)" >{{p.director?.nombre}}</span><br><br>
          <b>Actores:</b><br>
-         <span *ngFor="let item of p.listaActores"  data-toggle="modal" data-target="#actor" style="cursor:pointer" (click)="actor(item)">
+         <span *ngFor="let item of p.listaActores"  class="actorModal" data-toggle="modal" data-target="#actor" style="cursor:pointer" (click)="actor(item)">
             {{item.nombre}}<br>
          </span><br>
          <b>Generos:</b><br>
