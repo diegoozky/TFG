@@ -62,7 +62,9 @@ html {
     padding:1em;
     
   }
-  
+  #boton{
+    cursor: pointer;
+  }
   img{
     margin-bottom: 1em;
   }
