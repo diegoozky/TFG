@@ -28,7 +28,7 @@ public class DirectorModel {
 
 	private Date fechaNacimiento;
 
-	private Date fechaDefunción;
+	private Date fechaDefuncion;
 	
 	private String rutaImg;
 
@@ -75,12 +75,12 @@ public class DirectorModel {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public Date getFechaDefunción() {
-		return fechaDefunción;
+	public Date getFechaDefuncion() {
+		return fechaDefuncion;
 	}
 
 	public void setFechaDefunción(Date fechaDefunción) {
-		this.fechaDefunción = fechaDefunción;
+		this.fechaDefuncion = fechaDefunción;
 	}
 
 }

@@ -27,7 +27,7 @@ public class ActorModel {
 	
 	private Date fechaNacimiento;
 	
-	private Date fechaDefunción;
+	private Date fechaDefuncion;
 	
 	private String rutaImg;
 	
@@ -75,11 +75,11 @@ public class ActorModel {
 	}
 
 	public Date getFechaDefunción() {
-		return fechaDefunción;
+		return fechaDefuncion;
 	}
 
 	public void setFechaDefunción(Date fechaDefunción) {
-		this.fechaDefunción = fechaDefunción;
+		this.fechaDefuncion = fechaDefunción;
 	}
 	
 	

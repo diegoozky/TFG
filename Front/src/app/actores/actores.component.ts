@@ -22,7 +22,7 @@ export class ActoresComponent implements OnInit {
   }
 
   public loadActores(): void{
-    this.actoresService.loadActores().subscribe(res => {this.actores = res; console.log(this.actores);});
+    this.actoresService.loadActores().subscribe(res => {this.actores = res; console.log(this.actores[19].fechaDefuncion);});
   }
   public cerrarSesion(): void{
     sessionStorage.clear();
