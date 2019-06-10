@@ -53,6 +53,7 @@ table{
 th, td{
     border:2px solid white;
     padding:1em; 
+    width: 49%;
 
 }
 table thead tr th{
