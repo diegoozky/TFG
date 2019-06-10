@@ -13,6 +13,7 @@
   </div>
   <h1 class="titulo_pag">Peliculas</h1>
   <div style="border-radius:50px;">
+    
 <mat-form-field style="width:100%">
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" style="background-color: white; height:30px; width:100%">
 </mat-form-field>
@@ -61,9 +62,9 @@
          <b>Estreno:</b> {{p.estreno}}<br><br>
          <b>Productora:</b><br>{{p.productora}}<br><br>
          <b>Premios:</b><br>{{p.premios}}<br><br>
-         <b>Director:</b><br>{{p.director?.nombre}}<br><br>
+         <b>Director:</b><br><span class="directorModal" data-toggle="modal" data-target="#director" style="cursor:pointer" (click)="director(p.director)" >{{p.director?.nombre}}</span><br><br>
          <b>Actores:</b><br>
-         <span *ngFor="let item of p.listaActores"  data-toggle="modal" data-target="#actor" style="cursor:pointer" (click)="actor(item)">
+         <span *ngFor="let item of p.listaActores"  class="actorModal" data-toggle="modal" data-target="#actor" style="cursor:pointer" (click)="actor(item)">
             {{item.nombre}}<br>
          </span><br>
          <b>Generos:</b><br>
@@ -94,8 +95,34 @@
             <img src={{a.rutaImg}} width="70%">
           </div>
           <b>Fecha de Nacimiento: </b>{{a.fechaNacimiento}}<br><br>
-          <b>Fecha de Defunción: </b>{{a.fechaDefuncion}}<br><br>
           <b>Lugar de Nacimiento: </b>{{a.lugarNacimiento}}<br><br>
+          <b>Fecha de Defunción: </b>{{a.fechaDefuncion}}<br><br>
+
+        <div class="modal-footer">
+
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+   <!-- Modal -->
+ <div class="modal fade" id="director" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <h1>{{d.nombre}}</h1><br>
+          <div class="imagen">
+            <img src={{d.rutaImg}} width="70%">
+          </div>
+          <b>Fecha de Nacimiento: </b>{{d.fechaNacimiento}}<br><br>
+          <b>Lugar de Nacimiento: </b>{{d.lugarNacimiento}}<br><br>
+          <b>Fecha de Defunción: </b>{{d.fechaDefuncion}}<br><br>
+
         <div class="modal-footer">
 
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

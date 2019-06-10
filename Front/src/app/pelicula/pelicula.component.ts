@@ -5,6 +5,7 @@ import { Pelicula } from '../Model/Pelicula';
 import { PeliculaService } from './pelicula.service';
 import { Router } from '@angular/router';
 import { Actor } from '../Model/Actor';
+import { Director } from '../Model/Director';
 @Component({
   selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
@@ -16,11 +17,12 @@ export class PeliculaComponent implements OnInit {
   public peliculas: Pelicula[];
   public dataSource: any;
   public a: Actor;
-
+  public d: Director;
   constructor(private peliculaService: PeliculaService,  private router: Router) {
     this.peliculas = new Array<Pelicula>();
     this.p = new Pelicula();
     this.a = new Actor();
+    this.d = new Director();
    }
   displayedColumns: string[] = ['caratula','titulo', 'descripcion'];
 
@@ -59,5 +61,8 @@ export class PeliculaComponent implements OnInit {
   }
   public actor(a: Actor): void{
     this.a = a;
+  }
+  public director(d: Director): void{
+    this.d = d;
   }
 }

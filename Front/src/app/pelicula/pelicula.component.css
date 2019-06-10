@@ -97,3 +97,12 @@ img:hover{
     text-align: center;
     margin-bottom: 1em;
 }
+.directorModal:hover{
+color:blue;
+font-weight: bold;
+}
+.actorModal:hover{
+    color:blue;
+    font-weight: bold;
+
+    }
