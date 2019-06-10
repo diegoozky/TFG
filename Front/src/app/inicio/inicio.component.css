@@ -99,3 +99,16 @@ a{
     background-color: rgba(255, 50, 50, 0.8);
     
 }
+#correo{
+    color:white;
+    border: 3px solid #908383;
+    border-radius: 25px 25px 25px 25px;
+    background-color: rgba(192,177,177,0.3);
+    padding: 0.25em;
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.25em;
+  }
