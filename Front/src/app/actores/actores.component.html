@@ -11,8 +11,9 @@
     </div>
   </div>
 </div>
+<input type="text" name="filtro" (keypress)="filtrar()" ><br>
 <div class="container contenedor" style="width: 100%;">
-  <table *ngFor="let item of actores" style="float:left; max-width: 30%; max-height: 450px;margin-left:13.5%; ">
+  <table *ngFor="let item of actores" style="float:left; max-width: 30%; max-height: 450px;margin-left:13.5%; " class={{item.nombre}}>
     <thead>
       <tr>
         <th colspan=2>{{item.nombre}}</th>
