@@ -12,11 +12,9 @@ import { $ } from 'protractor';
 export class ActoresComponent implements OnInit {
 
   public actores: Actor[];
-  public cadena: string;
 
   constructor(private actoresService: ActoresService,  private router: Router) {
     this.actores = new Array<Actor>();
-    this.cadena= '';
    }
 
   ngOnInit() {
@@ -31,8 +29,6 @@ export class ActoresComponent implements OnInit {
     this.router.navigate(['/login']);
 
   }
-  public enviarFiltro(): void{
 
-  }
 
 }
