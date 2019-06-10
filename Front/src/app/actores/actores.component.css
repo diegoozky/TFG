@@ -37,7 +37,7 @@ a{
     background-color: rgba(255, 50, 50, 0.8);
     
 }
-.titulo_pag{
+#titulo_pag{
     color:white;
     border: 3px solid #994E81;
     border-radius: 25px 25px 25px 25px;
