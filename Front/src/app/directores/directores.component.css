@@ -32,10 +32,13 @@ a{
 .borde{
     border-radius: 25px 0px 0px 25px;
 }
+.directores{
+    background-color: rgba(64,127,127,0.8);
+}
 
 .bordefinal{
     border-radius: 0px 25px 25px 0px;
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 50, 50, 0.8);
     
 }
 .titulo_pag{
@@ -48,6 +51,7 @@ a{
     text-align: center;
     margin:auto;
     margin-bottom: 1.5em;
+    margin-top: 1.5em;
 
 }
 table{

@@ -11,6 +11,20 @@ html {
     font-weight: bold;
     font-size: 5em;/*200% para pantallas de moviles*/
   }
+
+  #correo{
+    color:white;
+    border: 3px solid #908383;
+    border-radius: 25px 25px 25px 25px;
+    background-color: rgba(192,177,177,0.3);
+    padding: 0.25em;
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.25em;
+  }
   
   span { 
     text-shadow: -0.06em 0 red,  0.06em 0 cyan; /* This creates the 3D effect, pretty easy, eh? */
@@ -21,6 +35,7 @@ html {
     margin: 0;
   }
   
+
   /* ---------------- Stars ---------------- */
   
   #stars span {
