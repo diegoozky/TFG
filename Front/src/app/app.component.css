@@ -34,6 +34,18 @@ html {
   p {
     margin: 0;
   }
+
+  #rrss{
+    position: fixed;
+    top:50%;
+    left:5%;
+    width: 50px ;
+    height: 80px;
+    
+  }
+  img{
+    margin-bottom: 1em;
+  }
   
 
   /* ---------------- Stars ---------------- */
