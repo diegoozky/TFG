@@ -2,8 +2,8 @@
 <div class="container menu">
     <div class="row" style="margin-top:2%">
         <div class="col opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
-        <div class="col opcion "><a [routerLink]="['/pelicula']">Peliculas</a></div>
-        <div class="col opcion"><a [routerLink]="['/actores']">Actores</a></div>
+        <div class="col opcion"><a [routerLink]="['/pelicula']">Peliculas</a></div>
+        <div class="col opcion actores"><a [routerLink]="['/actores']">Actores</a></div>
         <div class="col opcion"><a [routerLink]="['/directores']">Directores</a></div>
         <div class="col opcion "><a [routerLink]="['/listaAdmin']">Noticias/sugerencias</a></div>
         <div class="col opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
@@ -31,4 +31,5 @@
       </tr>
     </tbody>
   </table>
+
 </div>
