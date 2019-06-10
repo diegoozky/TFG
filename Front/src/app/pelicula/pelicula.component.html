@@ -63,7 +63,7 @@
          <b>Premios:</b><br>{{p.premios}}<br><br>
          <b>Director:</b><br>{{p.director?.nombre}}<br><br>
          <b>Actores:</b><br>
-         <span *ngFor="let item of p.listaActores">
+         <span *ngFor="let item of p.listaActores"  data-toggle="modal" data-target="#actor" style="cursor:pointer" (click)="actor(item)">
             {{item.nombre}}<br>
          </span><br>
          <b>Generos:</b><br>
@@ -81,4 +81,27 @@
     </div>
   </div>
 
+   <!-- Modal -->
+ <div class="modal fade" id="actor" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <h1>{{a.nombre}}</h1><br>
+          <div class="imagen">
+            <img src={{a.rutaImg}} width="70%">
+          </div>
+          <b>Fecha de Nacimiento: </b>{{a.fechaNacimiento}}<br><br>
+          <b>Fecha de Defunción: </b>{{a.fechaDefuncion}}<br><br>
+          <b>Lugar de Nacimiento: </b>{{a.lugarNacimiento}}<br><br>
+        <div class="modal-footer">
+
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </div>

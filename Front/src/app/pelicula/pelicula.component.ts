@@ -4,6 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { Pelicula } from '../Model/Pelicula';
 import { PeliculaService } from './pelicula.service';
 import { Router } from '@angular/router';
+import { Actor } from '../Model/Actor';
 @Component({
   selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
@@ -14,10 +15,12 @@ export class PeliculaComponent implements OnInit {
   public p: Pelicula;
   public peliculas: Pelicula[];
   public dataSource: any;
+  public a: Actor;
 
   constructor(private peliculaService: PeliculaService,  private router: Router) {
     this.peliculas = new Array<Pelicula>();
     this.p = new Pelicula();
+    this.a = new Actor();
    }
   displayedColumns: string[] = ['caratula','titulo', 'descripcion'];
 
@@ -53,5 +56,8 @@ export class PeliculaComponent implements OnInit {
   public eliminar(p: any): void{
     this.peliculaService.borrarPelicula(p.id).subscribe();
     window.location.reload();
+  }
+  public actor(a: Actor): void{
+    this.a = a;
   }
 }
