@@ -29,7 +29,6 @@ export class ActoresComponent implements OnInit {
     this.router.navigate(['/login']);
 
   }
-  public filtrar(): void{
-  }
+
 
 }

@@ -9,7 +9,7 @@
 .opcion{
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border: 2px solid white;
     padding-top:0.5em;
     padding-bottom:0.5em;
@@ -20,7 +20,7 @@
 .opcion:hover{
 
     background-color: grey;
-    font-size: 1.60rem;
+    font-size: 1.4rem;
     height: 64px;
     padding-top:-1em;
 }
@@ -35,7 +35,7 @@ a{
 
 .bordefinal{
     border-radius: 0px 25px 25px 0px;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.5);
     
 }
 .titulo_pag{
@@ -56,6 +56,8 @@ table{
     text-align: center;
     margin-bottom: 4em;
     border-collapse: separate;
+    color:white;
+
 }
 th, td{
     border:2px solid white;
