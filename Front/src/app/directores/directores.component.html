@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="container menu">
+    <div class=" menu">
         <div class="row" style="margin-top:2%">
             <div class="col opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
             <div class="col opcion "><a [routerLink]="['/pelicula']">Peliculas</a></div>
@@ -12,20 +12,22 @@
       </div>
     </div>
     <h1 class="titulo_pag">Directores</h1>
-    <div class="container contenedor">
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Foto</th>
-            <th>Nombre</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of directores">
-            <td><img src={{item.rutaImg}} title={{item.nombre}} alt={{item.nombre}} width="20%"></td>
-            <td>{{item.nombre}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="container contenedor" style="width: 100%;">
+        <table *ngFor="let item of directores" style="float:left; max-width: 30%; max-height: 450px;margin-left:13.5%; " class={{item.nombre}}>
+          <thead>
+            <tr>
+              <th colspan=2>{{item.nombre}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"></td>
+            </tr>
+            <tr>
+              <td>Fecha de nacimiento:</td><td>{{item.fechaNacimiento}}</td>
+            </tr>
+            <tr><td class="col1">Lugar de nacimiento:</td><td class="col2">{{item.lugarNacimiento}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

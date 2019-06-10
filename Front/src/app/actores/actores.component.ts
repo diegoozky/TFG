@@ -30,7 +30,6 @@ export class ActoresComponent implements OnInit {
 
   }
   public filtrar(): void{
-    
   }
 
 }
