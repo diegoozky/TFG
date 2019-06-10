@@ -32,6 +32,9 @@
       </tr>
       <tr><td class="col1">Lugar de nacimiento:</td><td class="col2">{{item.lugarNacimiento}}</td>
       </tr>
+      <tr *ngIf="item.fechaDefuncion != null">
+          <td>Fecha de defunción:</td><td>{{item.fechaDefuncion}}</td>
+        </tr>
     </tbody>
   </table>
 
