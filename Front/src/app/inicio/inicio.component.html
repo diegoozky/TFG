@@ -1,4 +1,15 @@
 <div class="container">
+    <div class="container menu">
+        <div class="row" style="margin-top:2%">
+            <div class="col opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
+            <div class="col opcion "><a [routerLink]="['/pelicula']">Peliculas</a></div>
+            <div class="col opcion"><a [routerLink]="['/actores']">Actores</a></div>
+            <div class="col opcion"><a [routerLink]="['/directores']">Directores</a></div>
+            <div class="col opcion "><a [routerLink]="['/listaAdmin']">Noticias</a></div>
+            <div class="col opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
+    
+        </div>
+      </div><br>
     <h1>Bienvenido a Five Stars!</h1>
     <p>Gracias por registrarte y entrar a nuestra aplicación web, te aseguro que no te arrepetiras.<br>
       Esta web está diseñado con el fin de obtener reseñas de las mejores películas del mundo cinematográfico. Como sabemos que no podemos contentar a todos, en un 
@@ -43,9 +54,5 @@
       <h2>Donde contactarnos?</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.094430517903!2d-3.6997765846424917!3d40.47317587935875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422912c3f95711%3A0xfd6d0a1eb67bcfc!2sIES+Tetu%C3%A1n+de+las+Victorias!5e0!3m2!1ses!2ses!4v1560106897860!5m2!1ses!2ses" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
-    <div class="botones">
-        <button type="button" class="btn btn-primary" (click)="peliculas()">Accede a nuestra aplicación y navega ahora!</button><br><br>
-        <button type="button" class="btn btn-danger" (click)="cerrarSesion()">Cerrar sesion</button>
 
-    </div>
 </div>
