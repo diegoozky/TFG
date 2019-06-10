@@ -95,7 +95,7 @@ public class PeliculaController {
 	@PutMapping
 	@CrossOrigin
 	public @ResponseBody boolean updatePelis(@RequestBody PeliculaModel p){
-		if(peliculaRepositorio.findByTitulo(p.getTitulo())!=null){
+		if(peliculaRepositorio.findById(p.getId()) != null){
 			peliculaRepositorio.save(p);
 			logHelper.warn("Se ha actualizado correctamente la pelicula");
 			return true;

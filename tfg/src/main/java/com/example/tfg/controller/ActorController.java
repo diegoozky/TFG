@@ -55,7 +55,7 @@ public class ActorController {
 	@PutMapping
 	@CrossOrigin
 	public @ResponseBody boolean updateActor(@RequestBody ActorModel a) {
-		if(actorRepositorio.findByNombre(a.getNombre())!=null){
+		if(actorRepositorio.findById(a.getId())!=null){
 			actorRepositorio.save(a);
 			logHelper.warn("Actor actualizado correctamente");
 			return true;

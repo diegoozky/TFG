@@ -18,11 +18,15 @@ export class PeliculaComponent implements OnInit {
   public dataSource: any;
   public a: Actor;
   public d: Director;
+  public peliculaCreada: Pelicula;
+  public rol: string;
   constructor(private peliculaService: PeliculaService,  private router: Router) {
     this.peliculas = new Array<Pelicula>();
     this.p = new Pelicula();
     this.a = new Actor();
     this.d = new Director();
+    this.peliculaCreada = new Pelicula();
+    this.rol = sessionStorage.getItem('rol');
    }
   displayedColumns: string[] = ['caratula','titulo', 'descripcion'];
 
@@ -58,6 +62,11 @@ export class PeliculaComponent implements OnInit {
   public eliminar(p: any): void{
     this.peliculaService.borrarPelicula(p.id).subscribe();
     window.location.reload();
+  }
+  public editar(): void{
+    this.peliculaService.editarPeli(this.p).subscribe(res=>{console.log(res)});
+    window.location.reload();
+
   }
   public actor(a: Actor): void{
     this.a = a;

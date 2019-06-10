@@ -21,5 +21,9 @@ export class PeliculaService {
     return this.http.delete<boolean>(this.url + '?id=' + id);
   }
 
+  public editarPeli(p: Pelicula): Observable<boolean>{
+    return this.http.put<boolean>(this.url, p , {headers: this.httpHeaders});
+  }
+
 
 }

@@ -12,9 +12,13 @@ import { $ } from 'protractor';
 export class ActoresComponent implements OnInit {
 
   public actores: Actor[];
+  public a: Actor;
+  public rol: string;
 
   constructor(private actoresService: ActoresService,  private router: Router) {
     this.actores = new Array<Actor>();
+    this.a = new Actor();
+    this.rol = sessionStorage.getItem('rol');
    }
 
   ngOnInit() {
@@ -29,6 +33,12 @@ export class ActoresComponent implements OnInit {
     this.router.navigate(['/login']);
 
   }
-
+  public mantener(a: Actor){
+    this.a = a;
+  }
+  public editar(){
+    this.actoresService.editarActor(this.a).subscribe();
+    window.location.reload();
+  }
 
 }

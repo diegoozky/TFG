@@ -13,4 +13,8 @@ export class DirectoresService {
   public loadDirectores(): Observable<Director[]>{
     return this.http.get<Director[]>(this.url);
   }
+  public editarDirector(d: Director): Observable<boolean>{
+    return this.http.put<boolean>(this.url, d , {headers: this.httpHeaders});
+    
+  }
 }

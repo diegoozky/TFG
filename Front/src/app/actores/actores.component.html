@@ -25,7 +25,10 @@
     </thead>
     <tbody>
       <tr>
-        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"></td>
+        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"><br><br>
+          <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-warning" data-toggle="modal" data-target="#editarActor" (click)="mantener(item)">Editar</button>            
+
+        </td>
       </tr>
       <tr>
         <td>Fecha de nacimiento:</td><td>{{item.fechaNacimiento}}</td>
@@ -39,4 +42,32 @@
     </tbody>
   </table>
 
+</div>
+ <!-- Modal EDITAR actor-->
+ <div class="modal fade" id="editarActor" role="dialog" style="text-align:center">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <form>
+            Nombre:<br>
+            <input type="text" placeholder="Inserte nombre..." value={{a.nombre}} [(ngModel)]="a.nombre" name="nombre"><br>
+            Fecha de nacimiento:<br>
+            <input type="date" value={{a.fechaNacimiento}} [(ngModel)]="a.fechaNacimiento" name="fechaNacimiento"><br>
+            Fecha de defunción:<br>
+            <input type="date" value={{a.fechaDefuncion}} [(ngModel)]="a.fechaDefuncion" name="fechaDefuncion"><br>
+            Lugar de nacimiento: <br>
+            <input type="text" placeholder="Inserte un lugar..." value={{a.lugarNacimiento}} name="lugarNacimiento" [(ngModel)]="a.lugarNacimiento">
+          </form>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editar()">Aceptar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </div>

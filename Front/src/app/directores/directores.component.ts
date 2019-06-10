@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
 export class DirectoresComponent implements OnInit {
 
   public directores: Director[];
+  public d: Director;
+  public rol: string;
 
   constructor(private directorService: DirectoresService, private router: Router) { 
 
     this.directores = new Array<Director>();
-
+    this.d = new Director();
+    this.rol = sessionStorage.getItem('rol');
   }
 
   ngOnInit() {
@@ -29,6 +32,14 @@ export class DirectoresComponent implements OnInit {
     sessionStorage.clear();
     this.router.navigate(['/login']);
 
+  }
+  public mantener(d: Director){
+    this.d = d;
+  }
+  public editar(){
+    console.log(this.d);
+    this.directorService.editarDirector(this.d).subscribe(res=>{console.log(res)});
+    window.location.reload();
   }
 
 }

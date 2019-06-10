@@ -35,7 +35,7 @@
     <!-- Descripcion Column -->
     <ng-container matColumnDef="descripcion" >
       <th mat-header-cell *matHeaderCellDef style="text-align:center;padding:1em;"> Descripcion</th>
-      <td mat-cell *matCellDef="let element" > {{element.descripcion}}</td>
+      <td mat-cell *matCellDef="let element"> {{element.descripcion}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -74,7 +74,8 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="trailer()">Ver Trailer</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="eliminar(p)">Eliminar</button>
+            <button type="button" class="btn btn-danger" *ngIf="rol == 'ADMIN'" data-dismiss="modal" (click)="eliminar(p)">Eliminar</button>
+            <button type="button" class="btn btn-warning" *ngIf="rol == 'ADMIN'" data-toggle="modal" data-target="#editarPelicula">Editar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -125,6 +126,30 @@
 
         <div class="modal-footer">
 
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+   <!-- Modal EDITAR PELICULA-->
+   <div class="modal fade" id="editarPelicula" role="dialog" style="text-align:center">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <form>
+            Titulo:<br>
+            <input type="text" placeholder="Inserte titulo..." value={{p.titulo}} [(ngModel)]="p.titulo" name="titulo"><br><br>
+            Descripción:<br><br>
+            <textarea value={{p.descripcion}} name="descripcion" [(ngModel)]="p.descripcion" rows=10></textarea>
+          </form>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editar()">Aceptar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>

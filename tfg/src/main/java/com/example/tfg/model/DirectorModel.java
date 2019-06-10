@@ -79,8 +79,10 @@ public class DirectorModel {
 		return fechaDefuncion;
 	}
 
-	public void setFechaDefunción(Date fechaDefunción) {
-		this.fechaDefuncion = fechaDefunción;
+	public void setFechaDefuncion(Date fechaDefuncion) {
+		this.fechaDefuncion = fechaDefuncion;
 	}
+
+
 
 }

@@ -74,13 +74,15 @@ public class ActorModel {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public Date getFechaDefunción() {
+	public Date getFechaDefuncion() {
 		return fechaDefuncion;
 	}
 
-	public void setFechaDefunción(Date fechaDefunción) {
-		this.fechaDefuncion = fechaDefunción;
+	public void setFechaDefuncion(Date fechaDefuncion) {
+		this.fechaDefuncion = fechaDefuncion;
 	}
+
+
 	
 	
 }

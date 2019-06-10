@@ -16,4 +16,7 @@ export class ActoresService {
   public loadActores(): Observable<Actor[]>{
     return this.http.get<Actor[]>(this.url+'/actores');
   }
+  public editarActor(a: Actor): Observable<boolean>{
+    return this.http.put<boolean>(this.url, a , {headers: this.httpHeaders});
+  }
 }

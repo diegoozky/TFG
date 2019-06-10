@@ -55,12 +55,12 @@ public class DirectorController {
 	@PutMapping
 	@CrossOrigin
 	public @ResponseBody boolean updateDirector(@RequestBody DirectorModel d) {
-		if(directorRepositorio.findByNombre(d.getNombre())!=null) {
+		if(directorRepositorio.findById(d.getId())!=null) {
 			directorRepositorio.save(d);
-			logHelper.warn("Se ha actualizado el actor correctamente");
+			logHelper.warn("Se ha actualizado el director correctamente");
 			return true;
 		}
-		logHelper.error("No se ha podido acturalizar el actor");
+		logHelper.error("No se ha podido acturalizar el director");
 		return false;
 	}
 	
