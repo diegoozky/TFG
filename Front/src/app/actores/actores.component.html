@@ -11,8 +11,8 @@
     </div>
   </div>
 </div>
-<div class="container contenedor" >
-  <table *ngFor="let item of actores">
+<div class="container contenedor" style="width: 100%; margin:auto;">
+  <table *ngFor="let item of actores" style="float:left; max-width: 50%; height: 600px;margin-left:5em; ">
     <thead>
       <tr>
         <th colspan=2>{{item.nombre}}</th>
@@ -20,7 +20,7 @@
     </thead>
     <tbody>
       <tr>
-        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%"></td>
+        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="400px"></td>
       </tr>
       <tr>
         <td>Fecha de nacimiento:</td><td>{{item.fechaNacimiento}}</td>
