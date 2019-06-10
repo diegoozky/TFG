@@ -6,6 +6,17 @@ h1{
     text-align: center;
     padding-bottom: 0.5em;
 }
+.titulo_pag{
+    color:white;
+    border: 3px solid #994E81;
+    border-radius: 25px 25px 25px 25px;
+    background-color: rgba(187,126,167,0.5);
+    padding: 0.25em;
+    width: 50%;
+    margin:auto;
+    margin-bottom: 1.5em;
+
+}
 h1, h2, p{
     font-family: 'coolvetica';
     color:white;
@@ -13,6 +24,7 @@ h1, h2, p{
 .novedades{
     display: flex;
     padding:1em;
+    margin-bottom: 1.5em;
 }
 .left{
     width: 40%;
@@ -23,14 +35,11 @@ h1, h2, p{
     margin-left: 5%;
 }
 .sugerencias{
-    /*border: 3px solid #7B9F35;
-    border-radius: 25px 25px 25px 25px;
-    background-color: rgba(86,119,20,0.5);
-    padding: 1.5em;*/
     border: 3px solid #726868;
     border-radius: 25px 25px 25px 25px;
     background-color: rgba(158,147,147,0.5);
     padding: 1.5em;
+    
 }
 .noticias{
     border: 3px solid #226666;
@@ -42,6 +51,7 @@ video{
     display:block;
     width:50%;
     margin: auto;
+    margin-bottom: 1.5em;
 }
 .video{
     text-align: center

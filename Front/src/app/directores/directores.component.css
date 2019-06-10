@@ -46,3 +46,15 @@ a{
     background-color: red;
     
 }
+.titulo_pag{
+    color:white;
+    border: 3px solid #994E81;
+    border-radius: 25px 25px 25px 25px;
+    background-color: rgba(187,126,167,0.5);
+    padding: 0.25em;
+    width: 40%;
+    text-align: center;
+    margin:auto;
+    margin-bottom: 1.5em;
+
+}
