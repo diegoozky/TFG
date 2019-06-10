@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2019 a las 11:13:39
+-- Tiempo de generación: 10-06-2019 a las 17:11:56
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -67,7 +67,7 @@ INSERT INTO `actores_pelicula` (`pelicula_model_id`, `lista_actores_id`) VALUES
 
 CREATE TABLE `actor_model` (
   `id` int(11) NOT NULL,
-  `fecha_defunción` date DEFAULT NULL,
+  `fecha_defuncion` date DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
   `lugar_nacimiento` varchar(255) DEFAULT NULL,
   `nombre` varchar(255) DEFAULT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE `actor_model` (
 -- Volcado de datos para la tabla `actor_model`
 --
 
-INSERT INTO `actor_model` (`id`, `fecha_defunción`, `fecha_nacimiento`, `lugar_nacimiento`, `nombre`, `ruta_img`) VALUES
+INSERT INTO `actor_model` (`id`, `fecha_defuncion`, `fecha_nacimiento`, `lugar_nacimiento`, `nombre`, `ruta_img`) VALUES
 (1, NULL, '1974-11-11', 'Los Angeles', 'Leonardo Dicaprio', './../../assets/img/actores/leonardo dicaprio.jpg'),
 (2, NULL, '1975-10-05', 'Berkshire, Inglaterra', 'Kate Winslet', './../../assets/img/actores/Kate_Winslet.jpg'),
 (3, NULL, '1965-04-04', 'Nueva York', 'Robert Downey Jr', './../../assets/img/actores/Robert_Downey_Jr.jpg'),
@@ -108,7 +108,7 @@ INSERT INTO `actor_model` (`id`, `fecha_defunción`, `fecha_nacimiento`, `lugar_
 
 CREATE TABLE `director_model` (
   `id` int(11) NOT NULL,
-  `fecha_defunción` date DEFAULT NULL,
+  `fecha_defuncion` date DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
   `lugar_nacimiento` varchar(255) DEFAULT NULL,
   `nombre` varchar(255) DEFAULT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE `director_model` (
 -- Volcado de datos para la tabla `director_model`
 --
 
-INSERT INTO `director_model` (`id`, `fecha_defunción`, `fecha_nacimiento`, `lugar_nacimiento`, `nombre`, `ruta_img`) VALUES
+INSERT INTO `director_model` (`id`, `fecha_defuncion`, `fecha_nacimiento`, `lugar_nacimiento`, `nombre`, `ruta_img`) VALUES
 (1, NULL, '1954-08-16', 'Kapuskasing, Ontario, Canadá', 'James Francis Cameron', './../../assets/img/directores/James.jfif'),
 (2, NULL, '1970-02-03', 'Cleveland, Ohio', 'Anthony Russo', './../../assets/img/directores/Anthony_Russo.png'),
 (3, NULL, '1946-07-20', 'Filadelfia, Pensilvania', 'Randal Kleiser', './../../assets/img/directores/Randal_Kleiser.jpg'),
