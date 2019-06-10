@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2019 a las 18:58:05
--- Versión del servidor: 10.1.40-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 10-06-2019 a las 11:13:39
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -125,7 +125,7 @@ INSERT INTO `director_model` (`id`, `fecha_defunción`, `fecha_nacimiento`, `lug
 (3, NULL, '1946-07-20', 'Filadelfia, Pensilvania', 'Randal Kleiser', './../../assets/img/directores/Randal_Kleiser.jpg'),
 (4, NULL, '1965-09-17', 'Nueva York', 'Bryan Jay Singer', './../../assets/img/directores/Bryan.jpg'),
 (5, NULL, '1952-05-14', 'Chicago', 'Robert Lee Zemeckis', './../../assets/img/directores/Robert.jpg'),
-(6, NULL, '1939-04-07', 'Detroit', 'Francis Ford Coppola', './../../assets/img/directores/Robert.jpg'),
+(6, NULL, '1939-04-07', 'Detroit', 'Francis Ford Coppola', './../../assets/img/directores/Francis.jfif'),
 (7, NULL, '1954-01-01', 'Bridlington', 'Mark Herman', './../../assets/img/directores/Mark_Herman.jpg'),
 (8, NULL, '1973-04-14', 'Suresnes, Altos del Sena', 'Olivier Nakache', './../../assets/img/directores/Olivier_Nakache.jpg'),
 (9, '1949-01-06', '1889-02-23', 'California, Estados Unidos', 'Victor Fleming', './../../assets/img/directores/Victor_Fleming.jpg');
