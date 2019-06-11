@@ -40,7 +40,9 @@ export class DirectoresComponent implements OnInit {
     this.directorService.editarDirector(this.d).subscribe(res=>{console.log(res)});
     window.location.reload();
   }
-  public eliminar(){
-    
+  public eliminar(a: any){
+    this.directorService.eliminarActor(a.id).subscribe(res=>{console.log(res)});
+
+
   }
 }
