@@ -53,7 +53,7 @@ html {
     position: fixed;
     top:85%;
     right:2%;
-    width: 7%;
+    width: 8%;
     height: 90px;
     text-align: center;
     border-radius: 25px 25px 25px 25px;
@@ -162,4 +162,19 @@ html {
 
   header{
     margin-bottom: 4%
+  }
+  @media all and (max-width: 1250px) { /* deberia ser 1200 */
+    #boton{
+      width:10%;
+    }
+    @media all and (max-width: 996px) {/*992*/
+      #boton{
+        height: 10%;
+      }
+      @media all and (max-width: 768px) {
+        
+      }
+
+    }
+
   }
