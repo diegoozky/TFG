@@ -40,5 +40,10 @@ export class ActoresComponent implements OnInit {
     this.actoresService.editarActor(this.a).subscribe();
     window.location.reload();
   }
+  public eliminar(a: any){
+    this.actoresService.eliminarActor(a.id).subscribe();
+    window.location.reload();
+
+  }
 
 }

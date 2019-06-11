@@ -37,9 +37,10 @@ export class DirectoresComponent implements OnInit {
     this.d = d;
   }
   public editar(){
-    console.log(this.d);
     this.directorService.editarDirector(this.d).subscribe(res=>{console.log(res)});
     window.location.reload();
   }
-
+  public eliminar(){
+    
+  }
 }

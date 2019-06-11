@@ -67,9 +67,9 @@ public class ActorController {
 	//Metodo que borra un actor de la bd y devuelve un booleano si es posible la accion
 	@DeleteMapping
 	@CrossOrigin
-	public @ResponseBody boolean borrarActores(@RequestBody ActorModel a){
-		if(actorRepositorio.findByNombre(a.getNombre())!=null) {
-			actorRepositorio.delete(a);
+	public @ResponseBody boolean borrarActores(@RequestParam Integer id){
+		if(actorRepositorio.findById(id)!=null) {
+			actorRepositorio.deleteById(id);
 			logHelper.warn("Actor borrado correctamente");
 
 			return true;

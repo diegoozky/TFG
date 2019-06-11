@@ -19,4 +19,7 @@ export class ActoresService {
   public editarActor(a: Actor): Observable<boolean>{
     return this.http.put<boolean>(this.url, a , {headers: this.httpHeaders});
   }
+  public eliminarActor(id: number): Observable<boolean>{
+    return this.http.delete<boolean>(this.url+'?id='+ id);
+  }
 }

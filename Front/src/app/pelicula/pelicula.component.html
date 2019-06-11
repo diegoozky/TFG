@@ -145,7 +145,13 @@
             Titulo:<br>
             <input type="text" placeholder="Inserte titulo..." value={{p.titulo}} [(ngModel)]="p.titulo" name="titulo"><br><br>
             Descripción:<br><br>
-            <textarea value={{p.descripcion}} name="descripcion" [(ngModel)]="p.descripcion" rows=10></textarea>
+            <textarea value={{p.descripcion}} name="descripcion" [(ngModel)]="p.descripcion" rows=10></textarea><br><br>
+            Duración:<br>
+            <input type="text" placeholder="Año de estreno..." value= {{p.duracion}} [(ngModel)]="p.duracion" name="duracion"><br><br>
+            Productora:<br><br>
+            <input type="text" placeholder="Productora..." value={{p.productora}} [(ngModel)]="p.productora" name="productora"><br><br>
+            Premios:<br><br>
+            <input type="text" placeholder="Premios..." value={{p.premios}} [(ngModel)]="p.premios" name="premios"><br><br>
           </form>
 
         <div class="modal-footer">

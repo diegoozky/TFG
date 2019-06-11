@@ -26,8 +26,9 @@
           <tbody>
             <tr>
               <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"><br><br>
-              <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-warning" data-toggle="modal" data-target="#editarDirector" (click)="mantener(item)">Editar</button>            
-              </td>
+              <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-warning" data-toggle="modal" data-target="#editarDirector" (click)="mantener(item)">Editar</button>  
+              <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>            
+            </td>
             </tr>
             <tr>
               <td>Fecha de nacimiento:</td><td>{{item.fechaNacimiento}}</td>
