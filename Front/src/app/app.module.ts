@@ -14,6 +14,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ActoresComponent } from './actores/actores.component';
 import { DirectoresComponent } from './directores/directores.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { NotiSugerenciasComponent } from './noti-sugerencias/noti-sugerencias.component';
 
 
 
@@ -24,7 +25,8 @@ import { InicioComponent } from './inicio/inicio.component';
     LoginComponent,
     ActoresComponent,
     DirectoresComponent,
-    InicioComponent
+    InicioComponent,
+    NotiSugerenciasComponent
   ],
   imports: [
     BrowserModule,
