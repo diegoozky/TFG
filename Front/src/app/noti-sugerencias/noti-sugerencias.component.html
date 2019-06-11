@@ -1,13 +1,42 @@
 <div class="container"style=" margin:auto;">
   <div class="menu">
   <div class="row" style="margin-top:2%">
-      <div class="col opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
-      <div class="col opcion "><a [routerLink]="['/pelicula']">Peliculas</a></div>
-      <div class="col opcion"><a [routerLink]="['/actores']">Actores</a></div>
-      <div class="col opcion"><a [routerLink]="['/directores']">Directores</a></div>
-      <div class="col opcion noti"><a [routerLink]="['/noticias']">Noticias/sugerencias</a></div>
-      <div class="col opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
+      <div class="col opcion borde "><a [routerLink]="['/inicio']" class="enlace">Inicio</a></div>
+      <div class="col opcion "><a [routerLink]="['/pelicula']" class="enlace">Peliculas</a></div>
+      <div class="col opcion "><a [routerLink]="['/actores']" class="enlace">Actores</a></div>
+      <div class="col opcion "><a [routerLink]="['/directores']" class="enlace">Directores</a></div>
+      <div class="col opcion noti "><a [routerLink]="['/noticias']" class="enlace">Noticias/sugerencias</a></div>
+      <div class="col opcion bordefinal "><a (click)="cerrarSesion()" href="" class="enlace">Cerrar sesion</a></div>
 
   </div>
 </div>
 <h1 id="titulo_pag">Sugerencias y Noticias</h1>
+<div class='sugerencias'>
+  <h2 class="titulo_suge">Sugerencias</h2>
+  Titulo:
+  <br><br>
+  <input type='text' name='titulo' placeholder="Inserte el titulo de la pelicula" size="30%" class='caja_titulo'>
+  <br><br><br>
+  Motivo:
+  <br><br>
+  <textarea rows="4" cols="50" class='caja_titulo'>
+
+  </textarea>
+
+</div>
+<div class="noticias">
+    <h2 class="titulo_suge">Noticias</h2>
+    Estos enlaces te permiten ver noticias sobre cine:
+    <div class='parrafo'><img src='./../../assets/img/fotogramas.png' class='imagen_noticia' width=90px height=60px>
+      <a href="https://www.fotogramas.es/" class="noticiaEnlace"><u>Fotogramas</u></a>
+    </div>
+    <div class='parrafo'><img src='./../../assets/img/noticias1.png' class='imagen_noticia' width=90px height=60px>
+      <a href="http://www.sensacine.com/peliculas/noticias/" class="noticiaEnlace"><u>Sensacine</u></a>
+    </div>
+    <div class='parrafo'><img src='./../../assets/img/septimo.png' class='imagen_noticia' width=90px height=60px>
+      <a href="https://www.elseptimoarte.net/noticias/" class="noticiaEnlace"><u>El septimo arte</u></a>
+    </div>
+    <div class='parrafo'><img src='./../../assets/img/premiere.png' class='imagen_noticia' width=90px height=60px>
+      <a href="https://www.cinepremiere.com.mx/noticias" class="noticiaEnlace"><u>Cine premiere</u></a>
+    </div>
+</div>
