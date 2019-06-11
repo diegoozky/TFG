@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pelicula } from '../Model/Pelicula';
+import { Genero } from '../Model/Genero';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,12 @@ export class PeliculaService {
 
   public editarPeli(p: Pelicula): Observable<boolean>{
     return this.http.put<boolean>(this.url, p , {headers: this.httpHeaders});
+  }
+  public loadGeneros(): Observable<Genero[]>{
+    return this.http.get<Genero[]>(this.url+'/genero');
+  }
+  public addPeli(p: Pelicula): Observable<boolean>{
+    return this.http.post<boolean>(this.url, p , {headers: this.httpHeaders});
   }
 
 
