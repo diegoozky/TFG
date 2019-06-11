@@ -6,6 +6,7 @@ import { PeliculaService } from './pelicula.service';
 import { Router } from '@angular/router';
 import { Actor } from '../Model/Actor';
 import { Director } from '../Model/Director';
+import { Genero } from '../Model/Genero';
 @Component({
   selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
@@ -20,6 +21,7 @@ export class PeliculaComponent implements OnInit {
   public d: Director;
   public peliculaCreada: Pelicula;
   public rol: string;
+  public generos: Array<Genero>;
   constructor(private peliculaService: PeliculaService,  private router: Router) {
     this.peliculas = new Array<Pelicula>();
     this.p = new Pelicula();
@@ -27,12 +29,14 @@ export class PeliculaComponent implements OnInit {
     this.d = new Director();
     this.peliculaCreada = new Pelicula();
     this.rol = sessionStorage.getItem('rol');
+    this.generos = new Array<Genero>();
    }
   displayedColumns: string[] = ['caratula','titulo', 'descripcion'];
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   ngOnInit() {
     this.loadPeliculas();
+    this.loadGeneros();
     if(sessionStorage.getItem('user') == null){
       this.router.navigate(['/login']);
     }
@@ -73,5 +77,11 @@ export class PeliculaComponent implements OnInit {
   }
   public director(d: Director): void{
     this.d = d;
+  }
+  public loadGeneros(){
+    this.peliculaService.loadGeneros().subscribe(res=>{this.generos = res; console.log(this.generos)})
+  }
+  public addPeli(){
+    this.peliculaService.addPeli(this.peliculaCreada).subscribe();
   }
 }

@@ -56,6 +56,12 @@ public class PeliculaController {
 		logHelper.warn("Se han devuelto todas las pelis");
 		return peliculaRepositorio.findAll();
 	}
+	@GetMapping(path="/genero")
+	@CrossOrigin
+	public @ResponseBody Iterable<GeneroModel> allGeneros(){
+		logHelper.warn("Se han devuelto todas las pelis");
+		return generoRepositorio.findAll();
+	}
 	
 	//Insertar un dato en la bd y devuelve true o false dependiendo si se ha podido realizar la accion
 	@PostMapping
@@ -117,4 +123,6 @@ public class PeliculaController {
 		logHelper.error("No se ha podido borrar correctamente la pelicula");
 		return false;
 	}
+	
+	
 }

@@ -105,3 +105,34 @@ font-weight: bold;
     font-weight: bold;
 
     }
+    @media all and (max-width: 996px) {/*992*/
+        th{
+            /*quitar esto en punto de ruptura*/
+            min-width: initial;
+            color: black;
+            padding: 2em; 
+            font-weight: bold; 
+            font-size: 2em;
+            background-color: rgba(255, 255, 255, 0.3);
+            text-align: center;
+            font-family: 'HARRY';
+        }
+        td.mat-cell{
+            /*quitar esto en punto de ruptura*/
+            min-width: initial;
+
+            padding:1em;
+            color: black;
+            text-align: center;
+            font-size:1.3em;
+            font-family: 'coolvetica';
+        }
+        .bordefinal{
+            border-radius: 0px 0px 0px 0px;
+            background-color: rgba(255, 50, 50, 0.8);
+            
+        }
+        .borde{
+            border-radius: 0px 0px 0px 0px;
+        }
+    }

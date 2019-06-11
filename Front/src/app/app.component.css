@@ -167,14 +167,20 @@ html {
     #boton{
       width:10%;
     }
-    @media all and (max-width: 996px) {/*992*/
-      #boton{
-        height: 10%;
-      }
-      @media all and (max-width: 768px) {
-        
-      }
+  }
+  @media all and (max-width: 996px) {/*992*/
+    #boton{
+      height: 10%;
+    }  
 
-    }
-
+  }
+  @media all and (max-width: 768px) {
+    .bordefinal{
+      border-radius: 0px 0px 0px 0px;
+      background-color: rgba(255, 50, 50, 0.8);
+      
+  }
+  .borde{
+      border-radius: 0px 0px 0px 0px;
+  }
   }

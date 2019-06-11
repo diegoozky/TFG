@@ -75,3 +75,27 @@ table thead tr th{
 .col2{
     border-radius: 0px 0px 25px 0px;
 }
+@media all and (max-width: 996px) {/*992*/
+
+    .contenedor{
+        width:100%;
+    }
+    th, td{
+        border:2px solid white;
+        padding:0em; 
+        width: 49%;
+        
+    }
+    th{
+        height: 60px;
+    }
+    .bordefinal{
+        border-radius: 0px 0px 0px 0px;
+        background-color: rgba(255, 50, 50, 0.8);
+        
+    }
+    .borde{
+        border-radius: 0px 0px 0px 0px;
+    }
+
+}

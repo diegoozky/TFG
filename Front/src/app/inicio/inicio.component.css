@@ -112,3 +112,21 @@ a{
     margin-bottom: 0.5em;
     font-size: 1.25em;
   }
+  @media all and (max-width: 996px) {
+    .bordefinal{
+        border-radius: 0px 0px 0px 0px;
+        background-color: rgba(255, 50, 50, 0.8);
+        
+    }
+    .borde{
+        border-radius: 0px 0px 0px 0px;
+    }
+}
+  @media all and (max-width: 768px) {
+      #mapa{
+          width: 80%;
+      }
+
+      
+}
+
