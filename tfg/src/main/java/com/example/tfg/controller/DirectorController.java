@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +35,7 @@ public class DirectorController {
 	@GetMapping
 	@CrossOrigin
 	public @ResponseBody Iterable<DirectorModel> allDirectores(){
-		logHelper.warn("Se han devuelto todos los actores");
+		logHelper.warn("Se han devuelto todos los directores");
 		return directorRepositorio.findAll();
 	}
 	
@@ -44,10 +45,10 @@ public class DirectorController {
 	public @ResponseBody boolean addDirector(@RequestBody DirectorModel d){
 		if(directorRepositorio.findByNombre(d.getNombre())==null) {
 			directorRepositorio.save(d);
-			logHelper.warn("Se ha añadido el actor correctamente");
+			logHelper.warn("Se ha añadido el director correctamente");
 			return true;
 		}
-		logHelper.error("No se ha podido crear el actor");
+		logHelper.error("No se ha podido crear el director");
 		return false;
 	}
 	
@@ -67,13 +68,13 @@ public class DirectorController {
 	//Método que borra un Director y devuelve un boolean dependiendo si se puede realiar la accion
 	@DeleteMapping
 	@CrossOrigin
-	public @ResponseBody boolean borrarDirector(@RequestBody DirectorModel d) {
-		if(directorRepositorio.findByNombre(d.getNombre())!=null) {
-			directorRepositorio.delete(d);
-			logHelper.warn("Se ha borrar el actor correctamente");
+	public @ResponseBody boolean borrarDirector(@RequestParam Integer id) {
+		if(directorRepositorio.findById(id)!=null) {
+			directorRepositorio.deleteById(id);
+			logHelper.warn("Se ha borrar el director correctamente");
 			return true;
 		}
-		logHelper.error("No se ha podido borrar el actor");
+		logHelper.error("No se ha podido borrar el director");
 		return false;
 	}
 }

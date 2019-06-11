@@ -17,4 +17,7 @@ export class DirectoresService {
     return this.http.put<boolean>(this.url, d , {headers: this.httpHeaders});
     
   }
+  public eliminarActor(id: number): Observable<boolean>{
+    return this.http.delete<boolean>(this.url+'?id='+ id);
+  }
 }
