@@ -1,0 +1,50 @@
+
+#titulo_pag{
+    color:white;
+    border: 3px solid #994E81;
+    border-radius: 25px 25px 25px 25px;
+    background-color: rgba(187,126,167,0.5);
+    padding: 0.25em;
+    width: 50%;
+    text-align: center;
+    margin:auto;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+
+}
+.menu{
+    margin-bottom: 4%;
+}
+.opcion{
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    border: 2px solid white;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    background-color: black;
+    transition: 2s;
+    height: 64px;
+}
+.opcion:hover{
+    background-color: grey;
+    font-size: 1.40rem;
+    height: 64px;
+    padding-top:-1em;
+}
+a{
+    text-decoration: none;
+    color: white
+}
+.borde{
+    border-radius: 25px 0px 0px 25px;
+}
+.noti{
+    background-color: rgba(64,127,127,0.8);
+}
+
+.bordefinal{
+    border-radius: 0px 25px 25px 0px;
+    background-color: rgba(255, 50, 50, 0.8);
+    
+}
