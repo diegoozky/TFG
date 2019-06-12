@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,7 @@ import com.example.tfg.repositorios.ActorRepository;
 import com.example.tfg.repositorios.DirectorRepository;
 import com.example.tfg.repositorios.GeneroRepository;
 import com.example.tfg.repositorios.PeliculaRepository;
+import com.example.tfg.service.JavaMailService;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -45,6 +48,9 @@ public class PeliculaController {
 	
 	@Autowired
 	ActorRepository actorRepositorio;
+	
+	@Autowired
+	JavaMailService sendMailService;
 	
 	static Logger logHelper = LogManager.getLogger(PeliculaModel.class);
 
@@ -122,6 +128,13 @@ public class PeliculaController {
 		}
 		logHelper.error("No se ha podido borrar correctamente la pelicula");
 		return false;
+	}
+	@PostMapping(path="/sendEmail")
+	@CrossOrigin
+	public @ResponseBody boolean enviarCorreo() {
+		String message = "Hola caracola";
+		sendMailService.sendEmail("fivestarstfg@gmail.com", "HI", message);
+		return true;
 	}
 	
 	
