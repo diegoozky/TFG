@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2019 a las 17:11:56
+-- Tiempo de generación: 12-06-2019 a las 09:52:33
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -83,7 +83,7 @@ INSERT INTO `actor_model` (`id`, `fecha_defuncion`, `fecha_nacimiento`, `lugar_n
 (2, NULL, '1975-10-05', 'Berkshire, Inglaterra', 'Kate Winslet', './../../assets/img/actores/Kate_Winslet.jpg'),
 (3, NULL, '1965-04-04', 'Nueva York', 'Robert Downey Jr', './../../assets/img/actores/Robert_Downey_Jr.jpg'),
 (4, NULL, '1989-10-01', 'Sacramento, California', 'Brie Larson', './../../assets/img/actores/Brie_Larson.jpg'),
-(5, NULL, '1954-02-18', 'Englewood, Nueva Jersey', 'John Joseph Travolt', './../../assets/img/actores/John_travoltra.jpg'),
+(5, NULL, '1954-02-18', 'Nueva Jersey', 'John Joseph Travolt', './../../assets/img/actores/John_travoltra.jpg'),
 (6, NULL, '1948-09-26', 'Cambridge', 'Olivia Newton-John', './../../assets/img/actores/olivia.jpg'),
 (7, NULL, '1981-05-12', 'Los Angeles', 'Ramy Said Malek', './../../assets/img/actores/rami.jpg'),
 (8, NULL, '1994-01-17', 'Nueva York', 'Lucy Boynton', './../../assets/img/actores/Lucy_Boynton.jpg'),
