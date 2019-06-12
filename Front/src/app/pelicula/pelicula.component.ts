@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { Actor } from '../Model/Actor';
 import { Director } from '../Model/Director';
 import { Genero } from '../Model/Genero';
+import { ActoresService } from '../actores/actores.service';
+import { DirectoresService } from '../directores/directores.service';
 @Component({
   selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
@@ -22,7 +24,12 @@ export class PeliculaComponent implements OnInit {
   public peliculaCreada: Pelicula;
   public rol: string;
   public generos: Array<Genero>;
-  constructor(private peliculaService: PeliculaService,  private router: Router) {
+  public generoString : Array<string>;
+  public actoresString: Array<string>;
+  public actores: Actor[];
+  public directores: Director[];
+// tslint:disable-next-line: max-line-length
+  constructor(private peliculaService: PeliculaService,  private router: Router, private actorService: ActoresService, private directorService: DirectoresService) {
     this.peliculas = new Array<Pelicula>();
     this.p = new Pelicula();
     this.a = new Actor();
@@ -30,6 +37,15 @@ export class PeliculaComponent implements OnInit {
     this.peliculaCreada = new Pelicula();
     this.rol = sessionStorage.getItem('rol');
     this.generos = new Array<Genero>();
+    this.peliculaCreada.director = new Director();
+    this.peliculaCreada.listaGeneros = new Array<Genero>();
+    this.peliculaCreada.listaActores = new Array<Actor>();
+    this.generoString = new Array<string>();
+    this.actoresString = new Array<string>();
+    this.actores = new Array<Actor>();
+    this.directores = new Array<Director>();
+
+
    }
   displayedColumns: string[] = ['caratula','titulo', 'descripcion'];
 
@@ -37,6 +53,8 @@ export class PeliculaComponent implements OnInit {
   ngOnInit() {
     this.loadPeliculas();
     this.loadGeneros();
+    this.actorService.loadActores().subscribe(res=>{this.actores = res;});
+    this.directorService.loadDirectores().subscribe(res=>{this.directores= res});
     if(sessionStorage.getItem('user') == null){
       this.router.navigate(['/login']);
     }
@@ -82,6 +100,17 @@ export class PeliculaComponent implements OnInit {
     this.peliculaService.loadGeneros().subscribe(res=>{this.generos = res; console.log(this.generos)})
   }
   public addPeli(){
+    for(let cadena of this.generoString){
+      let g = new Genero();
+      g.genero = cadena;
+      this.peliculaCreada.listaGeneros.push(g);
+    }
+    for(let cadena of this.actoresString){
+      let a = new Actor();
+      a.nombre = cadena;
+      this.peliculaCreada.listaActores.push(a);
+    }
+    console.log(this.peliculaCreada);
     this.peliculaService.addPeli(this.peliculaCreada).subscribe();
   }
 }
