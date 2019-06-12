@@ -18,7 +18,6 @@ export class InicioComponent implements OnInit {
   }
   peliculas(): void {
     this.router.navigate(['/pelicula']);
-
   }
   cerrarSesion(): void {
     sessionStorage.clear();

@@ -44,10 +44,10 @@ export class DirectoresComponent implements OnInit {
   }
   public eliminar(a: any) {
     this.directorService.eliminarActor(a.id).subscribe(res => { console.log(res) });
-
-
+    window.location.reload();
   }
   public addDirector() {
     this.directorService.addDirector(this.directorCreado).subscribe();
+    window.location.reload();
   }
 }
