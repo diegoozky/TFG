@@ -13,7 +13,7 @@
   </div>
   <h1 id="titulo_pag">Peliculas</h1>
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#crearPelicula">Añadir</button>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#crearPelicula" *ngIf="rol == 'ADMIN'">Añadir</button>
   <div style="border-radius:50px;">
 
 <mat-form-field style="width:100%">
@@ -181,6 +181,8 @@
             <input type="text" placeholder="Inserte titulo..."  [(ngModel)]="peliculaCreada.titulo" name="titulo"><br><br>
             Descripción:<br><br>
             <textarea  name="descripcion" [(ngModel)]="peliculaCreada.descripcion" rows=10></textarea><br><br>
+            Estreno:<br>
+            <input type="text" placeholder="Año de estreno..." [(ngModel)]="peliculaCreada.estreno" name="estreno"><br><br>
             Duración:<br>
             <input type="text" placeholder="Año de estreno..." [(ngModel)]="peliculaCreada.duracion" name="duracion"><br><br>
             Productora:<br><br>
@@ -188,11 +190,24 @@
             Premios:<br><br>
             <input type="text" placeholder="Premios..." [(ngModel)]="peliculaCreada.premios" name="premios"><br><br>
             Genero<br><br>
-            <select [(ngModel)]="peliculaCreada.listaGeneros" multiple="multiple" name="genero">
+            <select [(ngModel)]="generoString" multiple="multiple" name="genero" size=2>
               <option *ngFor="let item of generos" value={{item.genero}}>
                     {{item.genero}}
               </option>
-            </select>
+            </select><br>
+            <br>
+            Actores:<br>
+            <select [(ngModel)]="actoresString" multiple="multiple" name="actor" size=2>
+                <option *ngFor="let item of actores" value={{item.nombre}}>
+                  {{item.nombre}}
+                </option>
+            </select><br><br>
+            Director:<br>
+            <select [(ngModel)]="peliculaCreada.director.nombre" name="director">
+              <option *ngFor="let item of directores" value={{item.nombre}}>
+                {{item.nombre}}
+              </option>
+          </select><br><br>
           </form>
         </div>
         <div class="modal-footer">
