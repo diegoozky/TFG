@@ -82,7 +82,5 @@ public class ActorModel {
 		this.fechaDefuncion = fechaDefuncion;
 	}
 
-
-	
 	
 }
