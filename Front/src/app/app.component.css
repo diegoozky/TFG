@@ -43,7 +43,7 @@ html {
     height: 80px;
     
   }
-  #boton a{
+  /*#boton a{
     text-decoration: none;
     color:white;
 
@@ -60,11 +60,9 @@ html {
     border: 3px solid #908383;
     background-color: rgba(192,177,177,0.3);
     padding:1em;
-    
-  }
-  #boton{
     cursor: pointer;
-  }
+  }*/
+  
   img{
     margin-bottom: 1em;
   }
