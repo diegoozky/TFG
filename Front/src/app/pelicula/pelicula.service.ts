@@ -9,27 +9,27 @@ import { Genero } from '../Model/Genero';
 })
 export class PeliculaService {
 
-  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   private url = 'http://localhost:8080/pelicula';
 
   constructor(private http: HttpClient) { }
 
-  public loadPeliculas(): Observable<Pelicula[]>{
+  public loadPeliculas(): Observable<Pelicula[]> {
     return this.http.get<Pelicula[]>(this.url);
   }
 
-  public borrarPelicula(id: number): Observable<boolean>{
+  public borrarPelicula(id: number): Observable<boolean> {
     return this.http.delete<boolean>(this.url + '?id=' + id);
   }
 
-  public editarPeli(p: Pelicula): Observable<boolean>{
-    return this.http.put<boolean>(this.url, p , {headers: this.httpHeaders});
+  public editarPeli(p: Pelicula): Observable<boolean> {
+    return this.http.put<boolean>(this.url, p, { headers: this.httpHeaders });
   }
-  public loadGeneros(): Observable<Genero[]>{
-    return this.http.get<Genero[]>(this.url+'/genero');
+  public loadGeneros(): Observable<Genero[]> {
+    return this.http.get<Genero[]>(this.url + '/genero');
   }
-  public addPeli(p: Pelicula): Observable<boolean>{
-    return this.http.post<boolean>(this.url, p , {headers: this.httpHeaders});
+  public addPeli(p: Pelicula): Observable<boolean> {
+    return this.http.post<boolean>(this.url, p, { headers: this.httpHeaders });
   }
 
 

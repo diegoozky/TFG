@@ -1,12 +1,12 @@
 <div>
-<div class="container menu">
+  <div class="container menu">
     <div class="row" style="margin-top:2%">
-        <div class="col-lg opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
-        <div class="col-lg opcion"><a [routerLink]="['/pelicula']">Peliculas</a></div>
-        <div class="col-lg opcion actores"><a [routerLink]="['/actores']">Actores</a></div>
-        <div class="col-lg opcion"><a [routerLink]="['/directores']">Directores</a></div>
-        <div class="col-lg opcion "><a [routerLink]="['/noticias']">Noticias/sugerencias</a></div>
-        <div class="col-lg opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
+      <div class="col-lg opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
+      <div class="col-lg opcion"><a [routerLink]="['/pelicula']">Peliculas</a></div>
+      <div class="col-lg opcion actores"><a [routerLink]="['/actores']">Actores</a></div>
+      <div class="col-lg opcion"><a [routerLink]="['/directores']">Directores</a></div>
+      <div class="col-lg opcion "><a [routerLink]="['/noticias']">Noticias/sugerencias</a></div>
+      <div class="col-lg opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
 
     </div>
   </div>
@@ -14,10 +14,14 @@
 
 
 
-  <h1 id="titulo_pag">Actores</h1>
+<h1 id="titulo_pag">Actores</h1>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#crearActor" *ngIf="rol == 'ADMIN'"
+  style="margin-left: 47.5%">Añadir</button>
+
 <div class="container contenedor" style="width: 100%; overflow: hidden;">
 
-  <table *ngFor="let item of actores" style="float:left; max-width: 30%; max-height: 450px;margin-left:13.5%; " id={{item.nombre}}>
+  <table *ngFor="let item of actores" style="float:left; max-width: 30%; max-height: 450px;margin-left:13.5%; "
+    id={{item.nombre}}>
     <thead>
       <tr>
         <th colspan=2>{{item.nombre}}</th>
@@ -25,18 +29,24 @@
     </thead>
     <tbody>
       <tr>
-        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"><br *ngIf="rol == 'ADMIN'"><br *ngIf="rol == 'ADMIN'">
-          <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-warning" data-toggle="modal" data-target="#editarActor" (click)="mantener(item)">&nbsp; Editar &nbsp;</button> &nbsp;&nbsp;           
-          <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>            
+        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"><br
+            *ngIf="rol == 'ADMIN'"><br *ngIf="rol == 'ADMIN'">
+          <button type="button" *ngIf="rol == 'ADMIN'" class="btn btn-warning" data-toggle="modal"
+            data-target="#editarActor" (click)="mantener(item)">&nbsp; Editar &nbsp;</button> &nbsp;&nbsp;
+          <button type="button" *ngIf="rol == 'ADMIN'" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
         </td>
       </tr>
       <tr>
-        <td>Fecha de nacimiento:</td><td>{{item.fechaNacimiento}}</td>
+        <td>Fecha de nacimiento:</td>
+        <td>{{item.fechaNacimiento}}</td>
       </tr>
       <tr>
-        <td>Fecha de defunción:</td><td>{{item.fechaDefuncion}}</td>
+        <td>Fecha de defunción:</td>
+        <td>{{item.fechaDefuncion}}</td>
       </tr>
-      <tr><td class="col1">Lugar de nacimiento:</td><td class="col2">{{item.lugarNacimiento}}</td>
+      <tr>
+        <td class="col1">Lugar de nacimiento:</td>
+        <td class="col2">{{item.lugarNacimiento}}</td>
       </tr>
 
     </tbody>
@@ -46,31 +56,64 @@
 <div id="boton">
   <a onclick="recarga()">Volver al principio</a>
 </div>
- <!-- Modal EDITAR actor-->
- <div class="modal fade" id="editarActor" role="dialog" style="text-align:center">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
+<!-- Modal EDITAR actor-->
+<div class="modal fade" id="editarActor" role="dialog" style="text-align:center">
+  <div class="modal-dialog">
 
-        <div class="modal-body">
-          <form>
-            Nombre:<br>
-            <input type="text" placeholder="Inserte nombre..." value={{a.nombre}} [(ngModel)]="a.nombre" name="nombre"><br>
-            Fecha de nacimiento:<br>
-            <input type="date" value={{a.fechaNacimiento}} [(ngModel)]="a.fechaNacimiento" name="fechaNacimiento"><br>
-            Fecha de defunción:<br>
-            <input type="date" value={{a.fechaDefuncion}} [(ngModel)]="a.fechaDefuncion" name="fechaDefuncion"><br>
-            Lugar de nacimiento: <br>
-            <input type="text" placeholder="Inserte un lugar..." value={{a.lugarNacimiento}} name="lugarNacimiento" [(ngModel)]="a.lugarNacimiento">
-          </form>
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <form>
+          Nombre:<br>
+          <input type="text" placeholder="Inserte nombre..." value={{a.nombre}} [(ngModel)]="a.nombre"
+            name="nombre"><br>
+          Fecha de nacimiento:<br>
+          <input type="date" value={{a.fechaNacimiento}} [(ngModel)]="a.fechaNacimiento" name="fechaNacimiento"><br>
+          Fecha de defunción:<br>
+          <input type="date" value={{a.fechaDefuncion}} [(ngModel)]="a.fechaDefuncion" name="fechaDefuncion"><br>
+          Lugar de nacimiento: <br>
+          <input type="text" placeholder="Inserte un lugar..." value={{a.lugarNacimiento}} name="lugarNacimiento"
+            [(ngModel)]="a.lugarNacimiento">
+        </form>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editar()">Aceptar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
+  </div>
+</div>
+<!-- Modal Crear Actor -->
+<div class="modal fade" id="crearActor" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body">
+        <form>
+          Nombre:<br>
+          <input type="text" placeholder="Inserte titulo..." [(ngModel)]="actorCreado.nombre" name="nombre"><br><br>
+          Fecha de nacimiento:<br><br>
+          <input type="date" name="fechaNacimiento" [(ngModel)]="actorCreado.fechaNacimiento"><br><br>
+          Fecha de defunción:<br><br>
+          <input type="date" name="fechaNacimiento" [(ngModel)]="actorCreado.fechaDefuncion"><br><br>
+          Lugar de nacimiento:
+          <br><br> <input type="text" name="lugarNacimiento" [(ngModel)]="actorCreado.lugarNacimiento"
+            placeholder="Inserte un lugar...">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addActor()">Aceptar</button>
+
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

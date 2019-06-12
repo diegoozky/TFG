@@ -6,18 +6,21 @@ import { Director } from '../Model/Director';
   providedIn: 'root'
 })
 export class DirectoresService {
-  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   private url = 'http://localhost:8080/director';
   constructor(private http: HttpClient) { }
 
-  public loadDirectores(): Observable<Director[]>{
+  public loadDirectores(): Observable<Director[]> {
     return this.http.get<Director[]>(this.url);
   }
-  public editarDirector(d: Director): Observable<boolean>{
-    return this.http.put<boolean>(this.url, d , {headers: this.httpHeaders});
-    
+  public editarDirector(d: Director): Observable<boolean> {
+    return this.http.put<boolean>(this.url, d, { headers: this.httpHeaders });
+
   }
-  public eliminarActor(id: number): Observable<boolean>{
-    return this.http.delete<boolean>(this.url+'?id='+ id);
+  public eliminarActor(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(this.url + '?id=' + id);
+  }
+  public addDirector(d: Director): Observable<boolean> {
+    return this.http.post<boolean>(this.url, d, { headers: this.httpHeaders })
   }
 }

@@ -1,49 +1,53 @@
 <div class="container">
-    <div class=" menu">
-        <div class="row" style="margin-top:2%">
-            <div class="col-lg opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
-            <div class="col-lg opcion "><a [routerLink]="['/pelicula']">Peliculas</a></div>
-            <div class="col-lg opcion"><a [routerLink]="['/actores']">Actores</a></div>
-            <div class="col-lg opcion"><a [routerLink]="['/directores']">Directores</a></div>
-            <div class="col-lg opcion "><a [routerLink]="['/noticias']">Noticias/sugerencias</a></div>
-            <div class="col-lg opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
-    
-        </div>
-    </div><br>
-    <h1 id="titulo_pag">Inicio</h1>
-    <h1>Bienvenido a Five Stars!</h1>
-    <p>Gracias por registrarte y entrar a nuestra página web, te aseguramos que no te arrepetiras.<br>
-      Esta web está diseñada con el fin de obtener información de las mejores películas del mundo cinematográfico.
-      En esta página además de encontrar información sobre las peliculas, sus actores y directores también podemos
-      encontrar una seccion donde se pueden sugerir más películas para que se añadan a la lista y ver noticias de actualidad
-      del cine.
-      
-    </p>
-    <div class="novedades">
-        <div class ="left sugerencias">
-            <h2>1. Sugerencias</h2>
-            <p>En esta sección se encuentra un formulario con dos campos, uno para poner el titulo de la pelicula que se va a sugerir
-              y otro donde se podrá escribir el motivo por el cual añadirias esa pelicula.
-            </p>
-          </div>
-          <div class="right noticias">
-            <h2>2. Noticias</h2>
-            <p> En esta sección encontramos un link a Noticias de cine-SensaCine donde podrás ponerte al día.
-            </p>
-          </div>
+  <div class=" menu">
+    <div class="row" style="margin-top:2%">
+      <div class="col-lg opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
+      <div class="col-lg opcion "><a [routerLink]="['/pelicula']">Peliculas</a></div>
+      <div class="col-lg opcion"><a [routerLink]="['/actores']">Actores</a></div>
+      <div class="col-lg opcion"><a [routerLink]="['/directores']">Directores</a></div>
+      <div class="col-lg opcion "><a [routerLink]="['/noticias']">Noticias/sugerencias</a></div>
+      <div class="col-lg opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
+
     </div>
-    
-    <div class="video">
+  </div><br>
+  <h1 id="titulo_pag">Inicio</h1>
+  <h1>Bienvenido a Five Stars!</h1>
+  <p>Gracias por registrarte y entrar a nuestra página web, te aseguramos que no te arrepetiras.<br>
+    Esta web está diseñada con el fin de obtener información de las mejores películas del mundo cinematográfico.
+    En esta página además de encontrar información sobre las peliculas, sus actores y directores también podemos
+    encontrar una seccion donde se pueden sugerir más películas para que se añadan a la lista y ver noticias de
+    actualidad
+    del cine.
+
+  </p>
+  <div class="novedades">
+    <div class="left sugerencias">
+      <h2>1. Sugerencias</h2>
+      <p>En esta sección se encuentra un formulario con dos campos, uno para poner el titulo de la pelicula que se va a
+        sugerir
+        y otro donde se podrá escribir el motivo por el cual añadirias esa pelicula.
+      </p>
+    </div>
+    <div class="right noticias">
+      <h2>2. Noticias</h2>
+      <p> En esta sección encontramos un link a Noticias de cine-SensaCine donde podrás ponerte al día.
+      </p>
+    </div>
+  </div>
+
+  <div class="video">
     <h2>La mejor pelicula de lo que va de año?</h2>
     <video controls>
-        <source src="./../../assets/videos/ENDGAME.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="mapa">
-      <h2>Donde contactarnos?</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.094430517903!2d-3.6997765846424917!3d40.47317587935875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422912c3f95711%3A0xfd6d0a1eb67bcfc!2sIES+Tetu%C3%A1n+de+las+Victorias!5e0!3m2!1ses!2ses!4v1560106897860!5m2!1ses!2ses" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
+      <source src="./../../assets/videos/ENDGAME.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="mapa">
+    <h2>Donde contactarnos?</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.094430517903!2d-3.6997765846424917!3d40.47317587935875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422912c3f95711%3A0xfd6d0a1eb67bcfc!2sIES+Tetu%C3%A1n+de+las+Victorias!5e0!3m2!1ses!2ses!4v1560106897860!5m2!1ses!2ses"
+      width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
 </div>
 <div id="boton">
   <a onclick="recarga()">Volver al principio</a>

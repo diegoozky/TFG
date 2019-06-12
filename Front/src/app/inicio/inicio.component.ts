@@ -12,7 +12,7 @@ export class InicioComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if(sessionStorage.getItem('user') == null){
+    if (sessionStorage.getItem('user') == null) {
       this.router.navigate(['/login']);
     }
   }
@@ -20,7 +20,7 @@ export class InicioComponent implements OnInit {
     this.router.navigate(['/pelicula']);
 
   }
-  cerrarSesion(): void{
+  cerrarSesion(): void {
     sessionStorage.clear();
     this.router.navigate(['/login']);
   }

@@ -1,72 +1,116 @@
 <div class="container">
-    <div class=" menu">
-        <div class="row" style="margin-top:2%">
-            <div class="col-lg opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
-            <div class="col-lg opcion"><a [routerLink]="['/pelicula']">Peliculas</a></div>
-            <div class="col-lg opcion"><a [routerLink]="['/actores']">Actores</a></div>
-            <div class="col-lg opcion directores"><a [routerLink]="['/directores']">Directores</a></div>
-            <div class="col-lg opcion "><a [routerLink]="['/noticias']">Noticias/sugerencias</a></div>
-            <div class="col-lg opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
-    
-        </div>
-      </div>
+  <div class=" menu">
+    <div class="row" style="margin-top:2%">
+      <div class="col-lg opcion borde"><a [routerLink]="['/inicio']">Inicio</a></div>
+      <div class="col-lg opcion"><a [routerLink]="['/pelicula']">Peliculas</a></div>
+      <div class="col-lg opcion"><a [routerLink]="['/actores']">Actores</a></div>
+      <div class="col-lg opcion directores"><a [routerLink]="['/directores']">Directores</a></div>
+      <div class="col-lg opcion "><a [routerLink]="['/noticias']">Noticias/sugerencias</a></div>
+      <div class="col-lg opcion bordefinal"><a (click)="cerrarSesion()" href="">Cerrar sesion</a></div>
+
     </div>
+  </div>
+</div>
 
 
 
-    <h1 id="titulo_pag">Directores</h1>
-    <div class="container contenedor" style="width: 100%;overflow: hidden;">
+<h1 id="titulo_pag">Directores</h1>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#crearDirector"
+  *ngIf="rol == 'ADMIN'" style="margin-left: 47.5%">Añadir</button>
 
-        <table *ngFor="let item of directores" style="float:left; max-width: 30%; max-height: 450px;margin-left:13.5%; " class={{item.nombre}}>
-          <thead>
-            <tr>
-              <th colspan=2>{{item.nombre}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"><br *ngIf="rol == 'ADMIN'"><br *ngIf="rol == 'ADMIN'">
-              <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-warning" data-toggle="modal" data-target="#editarDirector" (click)="mantener(item)">&nbsp; Editar &nbsp;</button> &nbsp;&nbsp; 
-              <button type="button"  *ngIf="rol == 'ADMIN'"  class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>        
-            </td>
-            </tr>
-            <tr>
-              <td>Fecha de nacimiento:</td><td>{{item.fechaNacimiento}}</td>
-            </tr>
-            <tr><td class="col1">Lugar de nacimiento:</td><td class="col2">{{item.lugarNacimiento}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="boton">
-        <a onclick="recarga()">Volver al principio</a>
-      </div>
 
-         <!-- Modal EDITAR director-->
-   <div class="modal fade" id="editarDirector" role="dialog" style="text-align:center">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
+<div class="container contenedor" style="width: 100%;overflow: hidden;">
 
-        <div class="modal-body">
-          <form>
-            Nombre:<br>
-            <input type="text" placeholder="Inserte nombre..." value={{d.nombre}} [(ngModel)]="d.nombre" name="nombre"><br>
-            Fecha de nacimiento:<br>
-            <input type="date" value={{d.fechaNacimiento}} [(ngModel)]="d.fechaNacimiento" name="fechaNacimiento"><br>
-            Fecha de defunción:<br>
-            <input type="date" value={{d.fechaDefuncion}} [(ngModel)]="d.fechaDefuncion" name="fechaDefuncion"><br>
-            Lugar de nacimiento: <br>
-            <input type="text" placeholder="Inserte un lugar..." value={{d.lugarNacimiento}} name="lugarNacimiento" [(ngModel)]="d.lugarNacimiento">
-          </form>
+
+  <table *ngFor="let item of directores" style="float:left; max-width: 30%; max-height: 450px;margin-left:13.5%; "
+    class={{item.nombre}}>
+    <thead>
+      <tr>
+        <th colspan=2>{{item.nombre}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan=2><img src={{item.rutaImg}} alt={{item.nombre}} title={{item.nombre}} width="60%" height="180px"><br
+            *ngIf="rol == 'ADMIN'"><br *ngIf="rol == 'ADMIN'">
+          <button type="button" *ngIf="rol == 'ADMIN'" class="btn btn-warning" data-toggle="modal"
+            data-target="#editarDirector" (click)="mantener(item)">&nbsp; Editar &nbsp;</button> &nbsp;&nbsp;
+          <button type="button" *ngIf="rol == 'ADMIN'" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Fecha de nacimiento:</td>
+        <td>{{item.fechaNacimiento}}</td>
+      </tr>
+      <tr>
+        <td class="col1">Lugar de nacimiento:</td>
+        <td class="col2">{{item.lugarNacimiento}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id="boton">
+  <a onclick="recarga()">Volver al principio</a>
+</div>
+
+<!-- Modal EDITAR director-->
+<div class="modal fade" id="editarDirector" role="dialog" style="text-align:center">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <form>
+          Nombre:<br>
+          <input type="text" placeholder="Inserte nombre..." value={{d.nombre}} [(ngModel)]="d.nombre"
+            name="nombre"><br>
+          Fecha de nacimiento:<br>
+          <input type="date" value={{d.fechaNacimiento}} [(ngModel)]="d.fechaNacimiento" name="fechaNacimiento"><br>
+          Fecha de defunción:<br>
+          <input type="date" value={{d.fechaDefuncion}} [(ngModel)]="d.fechaDefuncion" name="fechaDefuncion"><br>
+          Lugar de nacimiento: <br>
+          <input type="text" placeholder="Inserte un lugar..." value={{d.lugarNacimiento}} name="lugarNacimiento"
+            [(ngModel)]="d.lugarNacimiento">
+        </form>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editar()">Aceptar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
+  </div>
+</div>
+<!-- Modal Crear Actor -->
+<div class="modal fade" id="crearDirector" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body">
+        <form>
+          Nombre:<br>
+          <input type="text" placeholder="Inserte titulo..." [(ngModel)]="directorCreado.nombre" name="nombre"><br><br>
+          Fecha de nacimiento:<br><br>
+          <input type="date" name="fechaNacimiento" [(ngModel)]="directorCreado.fechaNacimiento"><br><br>
+          Fecha de defunción:<br><br>
+          <input type="date" name="fechaNacimiento" [(ngModel)]="directorCreado.fechaDefuncion"><br><br>
+          Lugar de nacimiento:
+          <br><br> <input type="text" name="lugarNacimiento" [(ngModel)]="directorCreado.lugarNacimiento"
+            placeholder="Inserte un lugar...">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addDirector()">Aceptar</button>
+
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>
