@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActoresService } from './actores.service';
 import { Actor } from '../Model/Actor';
 import { Router } from '@angular/router';
-import { $ } from 'protractor';
+
 
 @Component({
   selector: 'app-actores',
