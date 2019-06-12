@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pelicula } from '../Model/Pelicula';
 import { Genero } from '../Model/Genero';
+import { Mensaje } from '../Model/Mensaje';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,7 @@ export class PeliculaService {
     return this.http.post<boolean>(this.url, p, { headers: this.httpHeaders });
   }
 
-
+  public sendCorreo(m: Mensaje): Observable<boolean>{
+    return this.http.post<boolean>(this.url + '/sendEmail', m , { headers: this.httpHeaders })
+  }
 }

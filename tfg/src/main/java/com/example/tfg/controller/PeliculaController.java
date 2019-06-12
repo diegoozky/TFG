@@ -131,9 +131,9 @@ public class PeliculaController {
 	}
 	@PostMapping(path="/sendEmail")
 	@CrossOrigin
-	public @ResponseBody boolean enviarCorreo() {
-		String message = "Hola caracola";
-		sendMailService.sendEmail("fivestarstfg@gmail.com", "HI", message);
+	public @ResponseBody boolean enviarCorreo(@RequestBody Mensaje m) {
+		String message = "From: " + m.getUsuario()+"\nMensaje: "+ m.getMensaje();
+		sendMailService.sendEmail("diego258tlv@gmail.com", m.getAsunto(), message);
 		return true;
 	}
 	
