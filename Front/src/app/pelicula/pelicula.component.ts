@@ -44,8 +44,6 @@ export class PeliculaComponent implements OnInit {
     this.actoresString = new Array<string>();
     this.actores = new Array<Actor>();
     this.directores = new Array<Director>();
-
-
   }
   displayedColumns: string[] = ['caratula', 'titulo', 'descripcion'];
 
